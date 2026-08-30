@@ -1,0 +1,96 @@
+{
+  "university_name": "Technische Hochschule Deggendorf",
+  "university_location": "Deggendorf",
+  "university_federal_state": "Bavaria",
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Artificial Intelligence for Smart Sensors and Actuators",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": "B2",
+    "min_ielts_score": 6.5,
+    "min_german_level": "None",
+    "total_ects_required": 210,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": 210,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "A first university degree qualifying for a profession in a course of study from a university or a university of applied sciences in the field of computer science, electrical engineering, mechatronics, physics, mathematics, or a related subject area with at least 210 ECTS credits, or a bachelor's degree with 180 ECTS credits plus relevant professional experience. Specific content requirements are evaluated based on the academic transcript.",
+        "core_reference_pillars": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Mechatronics",
+          "Physics",
+          "Mathematics"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 30,
+        "notes": "Applicants with a 180 ECTS bachelor's degree may be admitted if they can demonstrate additional relevant professional experience, or acquire the missing 30 ECTS through bridging courses (e.g., from a bachelor's degree at TH Deggendorf or another university) after admission and before the master's thesis. Language proficiency in English (B2 level or equivalent) is also required."
+      }
+    },
+    "deadlines": [
+      {
+        "applicant_origin": "ALL",
+        "semester": "WINTER",
+        "portal_opens": null,
+        "application_deadline": "2024-07-15"
+      },
+      {
+        "applicant_origin": "ALL",
+        "semester": "SUMMER",
+        "portal_opens": null,
+        "application_deadline": "2025-01-15"
+      }
+    ],
+    "required_documents": [
+      {
+        "document_name": "First University Degree (e.g., Bachelor's certificate)",
+        "is_mandatory": true,
+        "notes": "Minimum 210 ECTS or 180 ECTS with relevant professional experience."
+      },
+      {
+        "document_name": "Academic Transcript",
+        "is_mandatory": true,
+        "notes": "To evaluate specific content requirements in relevant fields."
+      },
+      {
+        "document_name": "Proof of English Language Proficiency",
+        "is_mandatory": true,
+        "notes": "Minimum B2 level (e.g., IELTS 6.5, TOEFL, Cambridge FCE)."
+      },
+      {
+        "document_name": "CV",
+        "is_mandatory": true,
+        "notes": null
+      },
+      {
+        "document_name": "Letter of Motivation",
+        "is_mandatory": true,
+        "notes": null
+      }
+    ]
+  },
+  "data_source": "FALLBACK_GENERATED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

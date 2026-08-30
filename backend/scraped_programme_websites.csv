@@ -1,0 +1,290 @@
+programme_id,university_name,programme_title,programme_website_url,status
+w72714,giessen,agrobioinformatics,,not_found
+w76981,frankfurt,ai digital learning instruction,,not_found
+w67521,ingolstadt,ai engineering autonomous systems,https://www.thi.de/elektro-und-informationstechnik/studiengaenge/ai-engineering-of-autonomous-systems-meng/,found
+w76133,munich,ai biomedicine,,not_found
+w70184,munich,ai society,,not_found
+w76327,heilbronn,ai,https://www.hs-heilbronn.de/en/applied-artificial-intelligence-master,found
+w67708,deggendorf,ai digital production management,https://www.th-deg.de/dm-m,found
+w65222,international school management,business data science,,not_found
+w72984,srh heidelberg,computerscience,,not_found
+w48416,deggendorf,computerscience,,not_found
+w60464,schmalkalden,computerscience,https://www.hs-schmalkalden.de/studium/studienangebot-hs-schmalkalden/master-studiengaenge/applied-computer-science-msc.html,found
+w64855,göttingen,data science,,not_found
+w59419,srh heidelberg,data science ai,,not_found
+w64193,rwth aachen,health informatics digital medicine,,not_found
+w41989,mittweida,mathematics network data,,not_found
+w63879,hof,research computerscience,,not_found
+w64135,iu international,ai,,not_found
+w64654,erlangennuremberg,ai,https://www.ai.study.fau.eu/,found
+w65096,würzburgschweinfurt,ai,https://mai.thws.de/,found
+w65719,brandenburg cottbussenftenberg,ai,https://www.b-tu.de/artificial-intelligence-ms,found
+w66233,ingolstadt,ai,,not_found
+w76659,bonn,ai,,not_found
+w64695,würzburg,ai extended reality,,not_found
+w70197,nuremberg,ai robotics,https://www.utn.de/en/study/ai-robotics-en/,found
+w76735,srh heidelberg,ai ai business,,not_found
+w51935,neuulm,ai data analytics,,not_found
+w63894,düsseldorf,ai data science,https://www.hhu.de/studium/studienangebot/studiengang-informationen/artificial-intelligence-and-data-science-master,found
+w64682,deggendorf,ai data science,,not_found
+w72154,furtwangen computerscience economics media health,ai data science digital business management,,not_found
+w70018,bremen,ai intelligent systems,,not_found
+w69294,darmstadt,ai machine learning,https://www.tu-darmstadt.de/studieren/studieninteressierte/studienangebot_studiengaenge/studiengang_334592.de.jsp,found
+w67120,hof,ai robotics,http://www.hof-university.de/studierende/studienberatung.html,found
+w64792,passau,ai engineering,https://www.uni-passau.de/master/artificial-intelligence/,found
+w64814,deggendorf,ai smart sensors actuators,https://www.th-deg.de/ki-m,found
+w23207,köln,automation it,http://www.th-koeln.de/studium/automation--it-master_3429.php,found
+w21156,chemnitz,automotive software engineering,,not_found
+w71054,deggendorf,automotive software engineering,https://www.th-deg.de/ase-m,found
+w7153,bonnrhinesieg,autonomous systems,,not_found
+w37487,jena,biochemistry,,not_found
+w64741,hallewittenberg,biodiversity,,not_found
+w24840,potsdam,bioinformatics,,not_found
+w7880,saarland,bioinformatics,,not_found
+w75171,rhinelandpalatinate kaiserslauternlandau,biology bioinformatics,,not_found
+w46757,ulm,biophysics,,not_found
+w26555,mannheim,business computing,,not_found
+w5845,furtwangen computerscience economics media health,business consulting,,not_found
+w53974,marburg,business informatics,,not_found
+w39354,passau,business informatics information systems,,not_found
+w64844,emdenleer,business intelligence data analytics,,not_found
+w40840,berlin school economics law,business intelligence process management,,not_found
+w67239,gisma,business management cybersecurity,,not_found
+w7727,marburg,business mathematics,,not_found
+w33754,munich,cartography,,not_found
+w39856,dresden,cartography,,not_found
+w64854,potsdam,climate earth water sustainability,,not_found
+w63932,osnabrück,cognitive computing,,not_found
+w40119,ruhr bochum,cognitive science,,not_found
+w6156,osnabrück,cognitive science,https://www.uni-osnabrueck.de/studieren/unsere-studienangebote/studiengaenge-von-a-z/cognitive-science-master-of-science,found
+w63850,darmstadt,cognitive science,,not_found
+w47553,ulm,cognitive systems,https://www.uni-ulm.de/in/fakultaet/studium/studiengaenge/studiengang/course/cognitive-systems-master/,found
+w44744,potsdam,cognitive systems language learning reasoning,,not_found
+w76982,karlsruhe institute karlsruhe,computational data science,https://www.sle.kit.edu/vorstudium/master-computational-data-science.php,found
+w65338,göttingen,computational biology bioinformatics,,not_found
+w6061,ruhr bochum,computational engineering,,not_found
+w6164,erlangennuremberg,computational engineering,,not_found
+w7029,rostock,computational engineering,,not_found
+w39397,stuttgart,computational linguistics,,not_found
+w6207,munich,computational mechanics,,not_found
+w57774,hannover,computational methods engineering,,not_found
+w68078,magdeburg,computational methods engineering,,not_found
+w61589,dresden,computational modelling simulation,https://tu-dresden.de/sins/ma-cms,found
+w15527,berlin,computational neuroscience,,not_found
+w32499,eberhard karls tübingen,computational neuroscience,,not_found
+w21012,hamburg,computational science engineering,,not_found
+w6204,munich,computational science engineering cse,,not_found
+w5668,braunschweig,computational science engineering,,not_found
+w54278,free berlin,computational,,not_found
+w6312,konstanz,computer information science,,not_found
+w65163,nordhausen,computer engineering iot systems,,not_found
+w42091,stuttgart,computerscience,,not_found
+w46833,hamburg,computerscience,,not_found
+w61896,siegen,computerscience,,not_found
+w64341,iu international,computerscience,,not_found
+w12313,freiburg,computerscience,https://www.tf.uni-freiburg.de/de/studienangebot/informatik/m-sc-informatik-computer-science,found
+w12519,rhinelandpalatinate kaiserslauternlandau,computerscience,https://rptu.de/studienangebot/22777/Informatik-Master-Informatik,found
+w18320,bonn,computerscience,,not_found
+w67238,gisma,computerscience,,not_found
+w69295,darmstadt,computerscience,,not_found
+w70166,hannover,computerscience,,not_found
+w72013,fresenius,computerscience,,not_found
+w73116,karlsruhe institute karlsruhe,computerscience,,not_found
+w73744,regensburg,computerscience,,not_found
+w74171,ruhr bochum,computerscience,,not_found
+w7683,paderborn,computerscience,,not_found
+w7728,marburg,computerscience,,not_found
+w7881,saarland,computerscience,,not_found
+w15731,berlin,computerscience computerscience,,not_found
+w64006,srh heidelberg,computerscience big data ai,,not_found
+w61451,srh heidelberg,computerscience cyber security,,not_found
+w68298,constructor,computerscience software engineering,,not_found
+w70337,potsdam,computerscience at hasso plattner institute,,not_found
+w56915,bauhausuniversität weimar,computerscience digital media,,not_found
+w73043,konstanz,computerscience industry business cosib,,not_found
+w65237,rostock,computerscience international,,not_found
+w46838,munich,computerscience games engineering,,not_found
+w7604,wuppertal,computer simulation science,,not_found
+w61781,central hesse thm,control computer communications engineering,,not_found
+w58891,brandenburg cottbussenftenberg,cyber security,,not_found
+w64105,bayerischen wirtschaft für angewandte wissenschaften hdbw,cyber security,,not_found
+w64998,saarland,cybersecurity,,not_found
+w71729,munich,data society,,not_found
+w55328,hildesheim,data analytics international s degree,,not_found
+w60434,rwth aachen,data analytics decision science,,not_found
+w7675,heidelberg,data computerscience,,not_found
+w63866,darmstadt,data discourse studies,,not_found
+w7429,magdeburg,data knowledge engineering,http://www.ovgu.de/Studium/Studienangebot/Master/Data+and+Knowledge+Engineering.html,found
+w49857,constructor,data engineering,,not_found
+w54981,munich,data engineering analytics,https://www.cit.tum.de/cit/studium/studiengaenge/master-data-engineering-analytics/,found
+w53975,marburg,data science,,not_found
+w58177,berlin,data science,,not_found
+w60824,bielefeld,data science,,not_found
+w61588,trier,data science,,not_found
+w64061,free berlin,data science,,not_found
+w64134,iu international,data science,,not_found
+w64410,rwth aachen,data science,https://www.rwth-aachen.de/go/id/pzpc?#aaaaaaaaaaapzpd,found
+w64790,erlangennuremberg,data science,,not_found
+w64805,braunschweig,data science,,not_found
+w65199,europe,data science,,not_found
+w66982,hamburg,data science,,not_found
+w69119,fulda,data science,,not_found
+w70182,greifswald,data science,,not_found
+w7041,dortmund,data science,https://www.tu-dortmund.de/studierende/studienangebot/data-science-48/,found
+w72756,ilmenau,data science,,not_found
+w72869,catholic eichstätt ingolstadt,data science,,not_found
+w73001,augsburg,data science,,not_found
+w73519,regensburg,data science,,not_found
+w74901,xu exponential,data science,,not_found
+w76328,münster,data science,,not_found
+w70803,bielefeld arts hsbi,data science research,,not_found
+w63909,saarland,data science ai,https://saarland-informatics-campus.de/studium-studies/master-deutsch/,found
+w73355,hamburg,data science ai,https://www.uni-hamburg.de/campuscenter/studienangebot/studiengang.html?1713942448,found
+w73210,oldenburg,data science machine learning,,not_found
+w73395,dortmund,data science sports health,,not_found
+w76998,erlangennuremberg,data science human multimodal communication multicom,,not_found
+w64772,gisma,data science ai digital business,,not_found
+w72981,srh heidelberg,data science business analytics,,not_found
+w44336,rhinewaal,design interaction,,not_found
+w70241,europe,devops,,not_found
+w67862,iu international,devops cloud computing,,not_found
+w59183,bayerischen wirtschaft für angewandte wissenschaften hdbw,digital business modelling entrepreneurship,,not_found
+w58999,bauhausuniversität weimar,digital engineering,,not_found
+w64371,european viadrina frankfurt oder,digital entrepreneurship,,not_found
+w72392,weihenstephantriesdorf,digital farming,,not_found
+w51043,deggendorf,digital health,,not_found
+w67297,srh heidelberg,digital health data science,,not_found
+w60523,potsdam,digital health at hasso plattner institute,,not_found
+w64964,neuulm,digital innovation management,,not_found
+w77134,neuulm,digital leadership information management,https://www.hnu.de/studienberatung,found
+w64881,köln,digital,,not_found
+w67457,srh heidelberg,digital supply chain management,,not_found
+w58006,dortmund arts,digital transformation,,not_found
+w63861,xu exponential,digital transformation sustainability,,not_found
+w64728,srh heidelberg,digital transformation management,,not_found
+w65263,bayreuth,digitalisation sustainability materials science engineering,,not_found
+w40009,koblenz,egovernment,,not_found
+w64087,dortmund,econometrics,https://www.tu-dortmund.de/studierende/studienangebot/econometrics-830/,found
+w34385,saarland,educational,,not_found
+w72321,west saxon zwickau,embedded autonomous systems,,not_found
+w58645,saarland,embedded systems,,not_found
+w40759,freiburg,embedded systems engineering,,not_found
+w46655,dortmund arts,embedded systems engineering,,not_found
+w64711,ingolstadt,engineering management,https://www.thi.de/wirtschaftsingenieurwesen/studiengaenge/engineering-and-management-msc,found
+w70007,bremen,engineering management space systems,,not_found
+w70345,siegen,engineering hydroenvironmental extremes,,not_found
+w58377,oldenburg,engineering sociotechnical systems,,not_found
+w63849,offenburg,enterprise it security,,not_found
+w64706,ingolstadt,entrepreneurship corporate venturing,,not_found
+w35054,rhinelandpalatinate kaiserslauternlandau,european s degree embedded computing systems emecs,,not_found
+w31781,karlsruhe institute karlsruhe,financial engineering,,not_found
+w9520,eberswalde sustainable development,forest information,,not_found
+w64989,mediumsized companies fhm,general management,,not_found
+w70242,europe,generative design ai,,not_found
+w39353,augsburg,geoinformatics,,not_found
+w64461,trier,geoinformatics,,not_found
+w63807,hannover,geodesy geoinformatics,,not_found
+w17259,munich,geodesy geoinformation,,not_found
+w12886,berlin,geodesy geoinformation science,,not_found
+w20658,münster,geoinformatics spatial data science,,not_found
+w6340,karlsruhe,geomatics,,not_found
+w14504,neubrandenburg,geomatics,,not_found
+w48425,fulda,global software development,,not_found
+w9362,frankfurt,high integrity systems,,not_found
+w64732,deggendorf,high performance computing quanmunich computing,,not_found
+w72570,nuremberg,human ai,,not_found
+w19928,sports cologne,human sports medicine,,not_found
+w73745,regensburg,humancentred ai,,not_found
+w7078,rwth aachen,humancentred intelligent system,,not_found
+w44824,bauhausuniversität weimar,humancomputer interaction,,not_found
+w29058,siegen,humancomputer interaction,,not_found
+w73251,albstadtsigmaringen engineering economics,industrial ai,,not_found
+w29281,emdenleer,industrial informatics,,not_found
+w76948,srh heidelberg,infomation business transformation,,not_found
+w65029,south westphalia,informatics business,,not_found
+w72904,hamburg,information communications engineering,,not_found
+w44338,rhinewaal,information engineering computerscience,,not_found
+w70911,munich,information engineering at heilbronn campus,,not_found
+w22519,münster,information systems,,not_found
+w70248,fh aachen,information systems,,not_found
+w7857,munich,information systems business informatics,,not_found
+w64274,karlsruhe institute karlsruhe,information systems engineering management,,not_found
+w65257,munich,information technologies built environment,,not_found
+w76947,srh heidelberg,information ai,,not_found
+w72437,media design design computerscience,information data science,,not_found
+w58775,giessen,insect biotechnology bioresources,,not_found
+w74175,georg simon ohm nuremberg,intelligent autonomous systems,https://www.th-nuernberg.de/studiengang/intelligent-autonomous-systems-meng/#tab-requirements,found
+w39157,hamburg,intelligent adaptive systems,,not_found
+w73172,brandenburg,interactive media,,not_found
+w32587,hallewittenberg,international area studies global change geography,,not_found
+w22630,erlangennuremberg,international information systems,,not_found
+w44254,south westphalia,international management information systems,,not_found
+w63892,south westphalia,international management information systemsonline careerintegrated continuing combined degree course,,not_found
+w76837,augsburg,international research innovation,,not_found
+w49047,bamberg,international software systems science,,not_found
+w65273,west saxon zwickau,internet things smart systems,,not_found
+w70240,europe,iot devices smart services,,not_found
+w49070,fachhochschule wedel,it engineering,,not_found
+w55385,lübeck,it security,,not_found
+w29660,darmstadt,it security,,not_found
+w49886,hohenheim,landscape ecology,,not_found
+w43856,saarland,language communication technologies,,not_found
+w7425,saarland,language science,,not_found
+w64037,deggendorf,life science informatics,,not_found
+w7129,bonn,life science informatics,,not_found
+w64325,darmstadt,logistics supply chain management,,not_found
+w63840,eberhard karls tübingen,machine learning,https://www.uni-tuebingen.de/de/140323,found
+w49048,leuphana lüneburg,management data science,,not_found
+w55377,ludwig maximilians munich,management digital technologies,,not_found
+w70087,west saxon zwickau,management information,,not_found
+w65376,bremen,management information systems,,not_found
+w55352,mannheim,mannheim data science mmds,,not_found
+w64074,mannheim,mannheim management analytics ai,,not_found
+w64350,mannheim,mannheim data science measurement,,not_found
+w63568,hamburg,marine ecosystem fisheries science,,not_found
+w65065,mannheim,management analytics fulltime,,not_found
+w66100,hertie school,data science public policy,,not_found
+w67189,esmt european school management,s analytics ai,,not_found
+w72710,brandenburg cottbussenftenberg,mathematical data science,,not_found
+w59180,passau,mathematics,,not_found
+w28710,jena,mathematics,,not_found
+w54198,saarland,mathematics computerscience,,not_found
+w73002,augsburg,mathematics computerscience,,not_found
+w55325,munich,mathematics data science,,not_found
+w72792,heidelberg,mathematics machine learning data science,,not_found
+w65599,würzburgschweinfurt,mba transformation,,not_found
+w71907,german international,media engineering,,not_found
+w42509,saarland,media informatics,,not_found
+w65058,augsburg,medical information,,not_found
+w72322,munich,microelectronics chip design,,not_found
+w58173,magdeburg,operations research business analytics,,not_found
+w70334,bayreuth,philosophy computerscience,https://www.international-office.uni-bayreuth.de/de/studiengangsseiten/4-bewerbungsfristen-masterstudiengaenge/index.php,found
+w5604,stuttgart,photogrammetry geoinformatics,,not_found
+w65229,berlin school htw,professional it business digitalisation,,not_found
+w56355,berlin school htw,project management data science,,not_found
+w77369,saarland,quanteninformationstheorie,,not_found
+w68439,siegen,quanmunich science,,not_found
+w67867,braunschweig,quanmunich technologies electrical computer engineering,,not_found
+w61854,karlsruhe institute karlsruhe,remote sensing geoinformatics,,not_found
+w70254,deggendorf,robotics,https://th-deg.de/mro-m,found
+w55386,lübeck,robotics autonomous systems,,not_found
+w72471,fresenius heidelberg stateapproved fresenius für internationales management gmbh,sap engineering analytics,,not_found
+w61581,würzburg,satellite,,not_found
+w64082,bayreuth,scientific computing,https://www.uni-bayreuth.de/en/master/scientific-computing,found
+w29632,rwth aachen,simulation,,not_found
+w64745,ansbach,smart energy systems,https://www.hs-ansbach.de/master/smart-energy-systems/,found
+w42184,konstanz,social economic data science,,not_found
+w42527,rhinelandpalatinate kaiserslauternlandau,social informatics,,not_found
+w74173,ingolstadt,sociotechnical cybersecurity,,not_found
+w15232,heilbronn,software engineering,,not_found
+w71290,hildesheim,software engineering international s degree,,not_found
+w7790,hof,software engineering industrial applications,,not_found
+w5622,rwth aachen,software systems engineering,,not_found
+w5965,stuttgart,software,,not_found
+w64848,dresden,transportation economics,,not_found
+w31435,rhinewaal,usability engineering,,not_found
+w64245,ingolstadt,user experience design,,not_found
+w16715,saarland,visual computing,,not_found
+w65043,magdeburg,visual computing,"https://www.ovgu.de/Visual_Computing_master-path-37420,39794,21190.html",found
+w39452,koblenz,web data science,https://www.uni-koblenz.de/de/studium/studienangebot/web-and-data-science-master-of-science,found
+w49156,chemnitz,web engineering,,not_found

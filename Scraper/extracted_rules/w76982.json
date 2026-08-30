@@ -1,0 +1,51 @@
+{
+  "university_name": "Karlsruhe Institute of Technology (KIT)",
+  "university_location": "Karlsruhe",
+  "university_federal_state": null,
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Computational and Data Science",
+    "degree_type": "B.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": false,
+        "equivalence_statement_raw": null,
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "The provided text only specifies language requirements. No other admission criteria (GPA, ECTS, specific documents, deadlines) are mentioned in this document excerpt."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

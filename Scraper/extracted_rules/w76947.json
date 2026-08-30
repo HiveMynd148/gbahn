@@ -1,0 +1,57 @@
+{
+  "university_name": "SRH University of Applied Sciences Heidelberg",
+  "university_location": "Heidelberg",
+  "university_federal_state": null,
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": null,
+  "program": {
+    "name": "Information Technology - Artificial Intelligence",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": false,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": false,
+        "equivalence_statement_raw": null,
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "The provided text only details the SRH English Proficiency Certificate as an accepted language test, but does not specify the required CEFR level or score. No other admission requirements (like prior degree, GPA, ECTS) are mentioned in this document."
+      }
+    },
+    "deadlines": [],
+    "required_documents": [
+      {
+        "document_name": "English Proficiency Certificate",
+        "is_mandatory": true,
+        "notes": "The SRH English Proficiency Certificate (powered by Password Skills Plus) is an option for international students. Results are available within 5 working days, valid for up to 2 years, and students may retake the test up to three times (initial + 2 retakes), with a one-month waiting period for the third retake."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

@@ -1,0 +1,51 @@
+{
+  "university_name": "Hochschule Heilbronn",
+  "university_location": "Heilbronn",
+  "university_federal_state": null,
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": "www.hs-heilbronn.de",
+  "program": {
+    "name": "Software Engineering",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": null,
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": null,
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "The provided document is a privacy policy for WhatsApp Business and SuperChat, not an examination regulation or study program description. Therefore, no specific admission criteria, including equivalence statements or core reference pillars for the \"Software Engineering\" program, could be found.",
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "The provided document does not contain any information about admission requirements for the 'Software Engineering' program at Heilbronn University. It is solely a privacy policy for a communication service (WhatsApp Business/Superchat)."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "FALLBACK_GENERATED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

@@ -1,0 +1,94 @@
+{
+  "university_name": "Technische Hochschule Deggendorf",
+  "university_location": "Deggendorf",
+  "university_federal_state": null,
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Automotive Software Engineering",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "A degree in a related field such as Computer Science, Electrical Engineering, or similar is required. The program assumes foundational knowledge in software engineering, programming, and mathematics.",
+        "core_reference_pillars": [
+          "Software Engineering",
+          "Programming",
+          "Mathematics"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 30,
+        "notes": "Conditional admission may be granted if up to 30 ECTS credits are missing from the required foundational knowledge. These must be completed during the master's program."
+      }
+    },
+    "deadlines": [
+      {
+        "applicant_origin": "ALL",
+        "semester": "WINTER",
+        "portal_opens": "2024-05-02",
+        "application_deadline": "2024-07-15"
+      },
+      {
+        "applicant_origin": "ALL",
+        "semester": "SUMMER",
+        "portal_opens": "2024-11-15",
+        "application_deadline": "2025-01-15"
+      }
+    ],
+    "required_documents": [
+      {
+        "document_name": "Bachelor's Degree Certificate",
+        "is_mandatory": true,
+        "notes": "Official certificate of your first university degree."
+      },
+      {
+        "document_name": "Transcript of Records",
+        "is_mandatory": true,
+        "notes": "Official transcript listing all courses and grades."
+      },
+      {
+        "document_name": "Curriculum Vitae",
+        "is_mandatory": true,
+        "notes": "CV detailing academic and professional experience."
+      },
+      {
+        "document_name": "Letter of Motivation",
+        "is_mandatory": true,
+        "notes": "Statement explaining your motivation for the program."
+      },
+      {
+        "document_name": "English Language Certificate",
+        "is_mandatory": true,
+        "notes": "Proof of English proficiency (e.g., IELTS, TOEFL, C1 level)."
+      }
+    ]
+  },
+  "data_source": "FALLBACK_GENERATED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

@@ -1,0 +1,120 @@
+{
+  "university_name": "Technische Hochschule Nürnberg Georg Simon Ohm",
+  "university_location": "Nürnberg",
+  "university_federal_state": "Bavaria",
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Intelligent & Autonomous Systems",
+    "degree_type": "M.Eng.",
+    "nc_status": "LOCAL_NC",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": "B1+ (speaking)/B2 (reading)",
+    "min_ielts_score": null,
+    "min_german_level": "A1",
+    "total_ects_required": 210,
+    "min_gpa_german_scale": 2.5,
+    "gre_required": "Not Required",
+    "is_free_tuition": false,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": 2.5,
+        "total_ects_required": 210,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": 15.0,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "ein einschlägiger Hochschulabschluss mit mindestens 210 ECTS - Leistungspunkte und einem Prüfungsgesamtergebnis von mindestens 2,5 oder ein aufgrund eines Hochschulstudiums erworbener gleichwertiger in - oder ausländischer Abschluss auf den Gebieten der Elektrotechnik, Informationstechnik, Informatik oder verwandter Fachrichtungen, sofern und ein Prüfungsgesamtergebnis von mindestens 2,5 vorliegt",
+        "core_reference_pillars": [
+          "Elektrotechnik",
+          "Informationstechnik",
+          "Informatik",
+          "verwandter Fachrichtungen"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 30,
+        "notes": "Conditional admission is possible for applicants with a bachelor's degree of 180-209 ECTS, requiring them to acquire missing ECTS, complete a 20-week relevant internship, or provide proof of 1 year of relevant professional experience. Conditional admission is also possible for applicants who have not yet received their final bachelor's grade but have completed all but a maximum of 45 ECTS credits. They must provide proof of the final degree meeting admission criteria within the first three months of study."
+      }
+    },
+    "deadlines": [
+      {
+        "applicant_origin": "ALL",
+        "semester": "SUMMER",
+        "portal_opens": null,
+        "application_deadline": "2025-01-15"
+      },
+      {
+        "applicant_origin": "ALL",
+        "semester": "WINTER",
+        "portal_opens": null,
+        "application_deadline": "2025-06-30"
+      }
+    ],
+    "required_documents": [
+      {
+        "document_name": "Degree Certificate and Diploma",
+        "is_mandatory": true,
+        "notes": "Or transcript of records for preliminary admission"
+      },
+      {
+        "document_name": "Transcript of Records",
+        "is_mandatory": true,
+        "notes": "For preliminary admission if final degree certificate is not yet available"
+      },
+      {
+        "document_name": "Work/Internship Certificates",
+        "is_mandatory": false,
+        "notes": "Required if applying with 180-209 ECTS bachelor's degree to fulfill missing ECTS requirements via practical experience or for professional experience option"
+      },
+      {
+        "document_name": "CV",
+        "is_mandatory": true,
+        "notes": "Tabular, in German or English. For non-EU applicants, explicitly English."
+      },
+      {
+        "document_name": "English Language Certificate",
+        "is_mandatory": true,
+        "notes": "Valid for max. 2 years"
+      },
+      {
+        "document_name": "German Language Certificate",
+        "is_mandatory": true,
+        "notes": "Valid for max. 2 years"
+      },
+      {
+        "document_name": "Motivation Letter",
+        "is_mandatory": false,
+        "notes": "Mandatory for non-EU applicants, in English, max 2000 characters"
+      },
+      {
+        "document_name": "Translated Transcript of Bachelor Thesis",
+        "is_mandatory": false,
+        "notes": "Mandatory for non-EU applicants, translated into English"
+      },
+      {
+        "document_name": "Original Application Documents",
+        "is_mandatory": true,
+        "notes": "Scan of original foreign documents"
+      },
+      {
+        "document_name": "Translated Application Documents",
+        "is_mandatory": true,
+        "notes": "Scan of German or English translation by a state-recognized translation agency, for foreign documents"
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

@@ -1,0 +1,2481 @@
+{
+  "audit_metadata": {
+    "timestamp": "2026-06-06T17:55:34.370845+00:00",
+    "description": "Comprehensive data quality audit of Gradbahn programme database source files",
+    "source_json_files_audited": 30,
+    "scraped_catalogue_size": 291,
+    "extraction_coverage": "30/291 (10.3%)"
+  },
+  "summary": {
+    "total_issues_found": 56,
+    "files_audited": 30,
+    "files_with_issues": 27,
+    "files_clean": 3,
+    "coverage_gaps_count": 261,
+    "breakdown_by_severity": {
+      "CRITICAL": 16,
+      "HIGH": 22,
+      "MEDIUM": 5,
+      "LOW": 13
+    },
+    "breakdown_by_category": {
+      "wrong_document": 11,
+      "data_source_mislabel": 6,
+      "missing_federal_state": 13,
+      "institution_type_error": 10,
+      "degree_type_error": 5,
+      "wrong_programme_name": 3,
+      "empty_extraction": 2,
+      "corrupt_text": 4,
+      "invalid_date": 2
+    }
+  },
+  "corrections": [
+    {
+      "source_file": "w15232.json",
+      "university_name_raw": "Hochschule Heilbronn",
+      "university_name_canonical": "Heilbronn University",
+      "programme_name": "Software Engineering",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Software Engineering'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided document does not contain any information about admission requirements for the 'Software Engineering' program at Heilbronn University. It is solely a privacy policy for a communication service (WhatsApp Business/Superchat).",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "DATA_SOURCE_MISLABEL",
+          "field": "data_source / _data_source",
+          "current_values": {
+            "data_source": "FALLBACK_GENERATED",
+            "_data_source": "GEMINI_EXTRACTED"
+          },
+          "description": "Conflicting provenance tags: 'data_source'='FALLBACK_GENERATED' vs '_data_source'='GEMINI_EXTRACTED'. The hydration script uses '_data_source' for DB ingestion, so the DB record will be tagged as 'GEMINI_EXTRACTED' regardless.",
+          "recommended_action": "Align both fields. If the data was correctly extracted, set both to 'GEMINI_EXTRACTED'.",
+          "correction": {
+            "data_source": "GEMINI_EXTRACTED"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Baden-Württemberg",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Baden-Württemberg'.",
+          "correction": {
+            "university_federal_state": "Baden-Württemberg"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w23207.json",
+      "university_name_raw": "Technische Hochschule Köln",
+      "university_name_canonical": "Technische Hochschule Köln",
+      "programme_name": "Automation & IT",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Automation & IT'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "This document is a phase-out regulation ('Auslaufordnung') for the program and does not contain admission criteria for new applicants. It only covers the rules for students already admitted or enrolled. The last intake cohort mentioned is Wintersemester 2024/25, suggesting the program is no longer a",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Hochschule Köln' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        },
+        {
+          "severity": "MEDIUM",
+          "category": "DEGREE_TYPE_ERROR",
+          "field": "degree_type",
+          "current_value": "Master of Engineering",
+          "correct_value": "M.Eng.",
+          "description": "Non-standard spelling; should use abbreviation",
+          "recommended_action": "Change degree_type to 'M.Eng.'.",
+          "correction": {
+            "degree_type": "M.Eng."
+          }
+        },
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_PROGRAMME_NAME",
+          "field": "program.name",
+          "current_value": "Automation & IT",
+          "expected_value": "Automation and IT",
+          "description": "The extracted programme name 'Automation & IT' does not match the expected 'Automation and IT' from the DAAD/scraped catalogue. The wrong PO was likely downloaded, or Gemini extracted from a document for a different programme.",
+          "recommended_action": "Verify and re-extract. If the data is actually for 'Automation & IT', update the catalogue mapping.",
+          "correction": {
+            "program.name": "Automation and IT"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w47553.json",
+      "university_name_raw": "University of Ulm",
+      "university_name_canonical": "University of Ulm",
+      "programme_name": "Cognitive Systems",
+      "issues": [
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Baden-Württemberg",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Baden-Württemberg'.",
+          "correction": {
+            "university_federal_state": "Baden-Württemberg"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "EMPTY_EXTRACTION",
+          "description": "All critical fields (language, ECTS, GPA) are null, no documents or deadlines extracted. This is likely a failed extraction where the source PDF didn't contain admission requirements.",
+          "recommended_action": "Mark as UNVERIFIED. Find and re-extract from the correct source document.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w63894.json",
+      "university_name_raw": "Heinrich-Heine-Universit\n\n\n\nt D\n\n\n\nsseldorf",
+      "university_name_canonical": "Heinrich-Heine-Universit\n\n\n\nt D\n\n\n\nsseldorf",
+      "programme_name": "Artificial Intelligence and Data Science",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "CORRUPT_TEXT",
+          "field": "university_name",
+          "current_value_snippet": "Heinrich-Heine-Universit\n\n\n\nt D\n\n\n\nsseldorf",
+          "description": "Contains corrupted unicode sequences (multiple \\n characters) from bad PDF text extraction.",
+          "recommended_action": "Re-extract from a cleaner PDF source, or manually clean the text by replacing corrupted sequences with the correct German characters (e.g., ü, ä, ö, ß)."
+        },
+        {
+          "severity": "HIGH",
+          "category": "CORRUPT_TEXT",
+          "field": "university_location",
+          "current_value_snippet": "D\n\n\n\nsseldorf",
+          "description": "Contains corrupted unicode sequences (multiple \\n characters) from bad PDF text extraction.",
+          "recommended_action": "Re-extract from a cleaner PDF source, or manually clean the text by replacing corrupted sequences with the correct German characters (e.g., ü, ä, ö, ß)."
+        },
+        {
+          "severity": "HIGH",
+          "category": "CORRUPT_TEXT",
+          "field": "qualitative.equivalence_statement_raw",
+          "current_value_snippet": "Der erforderliche erste berufsqualifizierende Studienabschluss kann in den F\n\n\n\nchern Mathematik, Physik, Informatik, Elektrotechnik oder in einem nahe verwandten Fach vorliegen. sowie die besondere B",
+          "description": "Contains corrupted unicode sequences (multiple \\n characters) from bad PDF text extraction.",
+          "recommended_action": "Re-extract from a cleaner PDF source, or manually clean the text by replacing corrupted sequences with the correct German characters (e.g., ü, ä, ö, ß)."
+        },
+        {
+          "severity": "HIGH",
+          "category": "CORRUPT_TEXT",
+          "field": "contingencies.notes",
+          "current_value_snippet": "Conditional admission is possible with a minimum of 160 ECTS in a Bachelor's degree, provided that the eligibility according to the \"Ordnung f\n\n\n\nr die Feststellung der besonderen Eignung\" is confirme",
+          "description": "Contains corrupted unicode sequences (multiple \\n characters) from bad PDF text extraction.",
+          "recommended_action": "Re-extract from a cleaner PDF source, or manually clean the text by replacing corrupted sequences with the correct German characters (e.g., ü, ä, ö, ß)."
+        },
+        {
+          "severity": "MEDIUM",
+          "category": "DEGREE_TYPE_ERROR",
+          "field": "degree_type",
+          "current_value": "Master of Science",
+          "correct_value": "M.Sc.",
+          "description": "Non-standard spelling; should use abbreviation",
+          "recommended_action": "Change degree_type to 'M.Sc.'.",
+          "correction": {
+            "degree_type": "M.Sc."
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64006.json",
+      "university_name_raw": "SRH University of Applied Sciences Heidelberg",
+      "university_name_canonical": "SRH University of Applied Sciences Heidelberg",
+      "programme_name": "Computer Science - Big Data and Artificial Intelligence",
+      "issues": [
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Baden-Württemberg",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Baden-Württemberg'.",
+          "correction": {
+            "university_federal_state": "Baden-Württemberg"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64082.json",
+      "university_name_raw": "University of Bayreuth",
+      "university_name_canonical": "University of Bayreuth",
+      "programme_name": "Scientific Computing",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Scientific Computing'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided document is solely about the repeal of the examination regulations for the Master's program 'African Development Studies in Geography' and its discontinuation. No information regarding the 'Scientific Computing' program's admission criteria could be found in this text.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "DATA_SOURCE_MISLABEL",
+          "field": "data_source / _data_source",
+          "current_values": {
+            "data_source": "FALLBACK_GENERATED",
+            "_data_source": "GEMINI_EXTRACTED"
+          },
+          "description": "Conflicting provenance tags: 'data_source'='FALLBACK_GENERATED' vs '_data_source'='GEMINI_EXTRACTED'. The hydration script uses '_data_source' for DB ingestion, so the DB record will be tagged as 'GEMINI_EXTRACTED' regardless.",
+          "recommended_action": "Align both fields. If the data was correctly extracted, set both to 'GEMINI_EXTRACTED'.",
+          "correction": {
+            "data_source": "GEMINI_EXTRACTED"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64087.json",
+      "university_name_raw": "TU Dortmund University",
+      "university_name_canonical": "TU Dortmund University",
+      "programme_name": "Econometrics",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Econometrics'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided document is a regulation for the submission and evaluation of Bachelor's and Master's theses and does not contain any information regarding admission requirements for the Econometrics program or any other program.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "North Rhine-Westphalia",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'North Rhine-Westphalia'.",
+          "correction": {
+            "university_federal_state": "North Rhine-Westphalia"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64135.json",
+      "university_name_raw": "IU Internationale Hochschule GmbH",
+      "university_name_canonical": "IU International University",
+      "programme_name": "Artificial Intelligence",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'IU Internationale Hochschule GmbH' is classified as 'University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64711.json",
+      "university_name_raw": "Technische Hochschule Ingolstadt",
+      "university_name_canonical": "Technische Hochschule Ingolstadt",
+      "programme_name": "Engineering and Management",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Hochschule Ingolstadt' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Bavaria",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Bavaria'.",
+          "correction": {
+            "university_federal_state": "Bavaria"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64745.json",
+      "university_name_raw": "Hochschule für angewandte Wissenschaften Ansbach",
+      "university_name_canonical": "Ansbach University of Applied Sciences",
+      "programme_name": "Smart Energy Systems",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Smart Energy Systems'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "No admission criteria were found in the provided university constitution document (Grundordnung). This document focuses on the general organizational structure and internal procedures of the university, not on specific program admission requirements.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64792.json",
+      "university_name_raw": "Universität Passau",
+      "university_name_canonical": "University of Passau",
+      "programme_name": "Artificial Intelligence Engineering",
+      "issues": [
+        {
+          "severity": "MEDIUM",
+          "category": "DEGREE_TYPE_ERROR",
+          "field": "degree_type",
+          "current_value": "Master of Science",
+          "correct_value": "M.Sc.",
+          "description": "Non-standard spelling; should use abbreviation",
+          "recommended_action": "Change degree_type to 'M.Sc.'.",
+          "correction": {
+            "degree_type": "M.Sc."
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Bavaria",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Bavaria'.",
+          "correction": {
+            "university_federal_state": "Bavaria"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w64814.json",
+      "university_name_raw": "Technische Hochschule Deggendorf",
+      "university_name_canonical": "Technische Hochschule Deggendorf",
+      "programme_name": "Artificial Intelligence for Smart Sensors and Actuators",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "DATA_SOURCE_MISLABEL",
+          "field": "data_source / _data_source",
+          "current_values": {
+            "data_source": "FALLBACK_GENERATED",
+            "_data_source": "GEMINI_EXTRACTED"
+          },
+          "description": "Conflicting provenance tags: 'data_source'='FALLBACK_GENERATED' vs '_data_source'='GEMINI_EXTRACTED'. The hydration script uses '_data_source' for DB ingestion, so the DB record will be tagged as 'GEMINI_EXTRACTED' regardless.",
+          "recommended_action": "Align both fields. If the data was correctly extracted, set both to 'GEMINI_EXTRACTED'.",
+          "correction": {
+            "data_source": "GEMINI_EXTRACTED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Hochschule Deggendorf' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w65096.json",
+      "university_name_raw": "Technische Hochschule Würzburg-Schweinfurt",
+      "university_name_canonical": "University of Würzburg",
+      "programme_name": "Artificial Intelligence",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University of Applied Sciences",
+          "correct_value": "University",
+          "description": "'Technische Hochschule Würzburg-Schweinfurt' is classified as 'Technical University of Applied Sciences' but should be 'University'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University'.",
+          "correction": {
+            "university_institution_type": "University"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w67120.json",
+      "university_name_raw": "Hof University of Applied Sciences",
+      "university_name_canonical": "Hof University of Applied Sciences",
+      "programme_name": "Marketing Management",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_PROGRAMME_NAME",
+          "field": "program.name",
+          "current_value": "Marketing Management",
+          "expected_value": "Artificial Intelligence and Robotics",
+          "description": "The extracted programme name 'Marketing Management' does not match the expected 'Artificial Intelligence and Robotics' from the DAAD/scraped catalogue. The wrong PO was likely downloaded, or Gemini extracted from a document for a different programme.",
+          "recommended_action": "Verify and re-extract. If the data is actually for 'Marketing Management', update the catalogue mapping.",
+          "correction": {
+            "program.name": "Artificial Intelligence and Robotics"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w67521.json",
+      "university_name_raw": "Technische Hochschule Ingolstadt",
+      "university_name_canonical": "Technische Hochschule Ingolstadt",
+      "programme_name": "AI Engineering of Autonomous Systems",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Hochschule Ingolstadt' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w67708.json",
+      "university_name_raw": "Technische Hochschule Deggendorf",
+      "university_name_canonical": "Technische Hochschule Deggendorf",
+      "programme_name": "Applied Artificial Intelligence for Digital Production Management",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Applied Artificial Intelligence for Digital Production Management'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "Admission criteria for specific programs (e.g., required degree, min grade/GPA, language thresholds, ECTS in subject categories, deadlines, and required documents) are not present in this document, which is the university's Grundordnung (Basic Order) and focuses on organizational structure and gover",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Hochschule Deggendorf' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w69294.json",
+      "university_name_raw": "Technical University of Darmstadt",
+      "university_name_canonical": "Technical University of Darmstadt",
+      "programme_name": "Artificial Intelligence and Machine Learning",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "EMPTY_EXTRACTION",
+          "description": "All critical fields (language, ECTS, GPA) are null, no documents or deadlines extracted. This is likely a failed extraction where the source PDF didn't contain admission requirements.",
+          "recommended_action": "Mark as UNVERIFIED. Find and re-extract from the correct source document.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w70254.json",
+      "university_name_raw": "Technische Hochschule Deggendorf",
+      "university_name_canonical": "Technische Hochschule Deggendorf",
+      "programme_name": "Robotics",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Robotics'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided document is a general 'Grundordnung' (Basic Regulations) of the university, detailing its organizational structure, governance, and election procedures. It does not contain specific admission requirements for individual study programs like 'Robotics'.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Hochschule Deggendorf' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Bavaria",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Bavaria'.",
+          "correction": {
+            "university_federal_state": "Bavaria"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w7041.json",
+      "university_name_raw": "Technische Universität Dortmund",
+      "university_name_canonical": "Dortmund University of Applied Sciences and Arts",
+      "programme_name": "Data Science",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Data Science'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided document is 'Regulations for the Submission of Final Theses' and does not contain any information regarding admission requirements for the Data Science Master's program. Therefore, specific admission criteria could not be extracted.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "DATA_SOURCE_MISLABEL",
+          "field": "data_source / _data_source",
+          "current_values": {
+            "data_source": "FALLBACK_GENERATED",
+            "_data_source": "GEMINI_EXTRACTED"
+          },
+          "description": "Conflicting provenance tags: 'data_source'='FALLBACK_GENERATED' vs '_data_source'='GEMINI_EXTRACTED'. The hydration script uses '_data_source' for DB ingestion, so the DB record will be tagged as 'GEMINI_EXTRACTED' regardless.",
+          "recommended_action": "Align both fields. If the data was correctly extracted, set both to 'GEMINI_EXTRACTED'.",
+          "correction": {
+            "data_source": "GEMINI_EXTRACTED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Universität Dortmund' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w71054.json",
+      "university_name_raw": "Technische Hochschule Deggendorf",
+      "university_name_canonical": "Technische Hochschule Deggendorf",
+      "programme_name": "Automotive Software Engineering",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "DATA_SOURCE_MISLABEL",
+          "field": "data_source / _data_source",
+          "current_values": {
+            "data_source": "FALLBACK_GENERATED",
+            "_data_source": "GEMINI_EXTRACTED"
+          },
+          "description": "Conflicting provenance tags: 'data_source'='FALLBACK_GENERATED' vs '_data_source'='GEMINI_EXTRACTED'. The hydration script uses '_data_source' for DB ingestion, so the DB record will be tagged as 'GEMINI_EXTRACTED' regardless.",
+          "recommended_action": "Align both fields. If the data was correctly extracted, set both to 'GEMINI_EXTRACTED'.",
+          "correction": {
+            "data_source": "GEMINI_EXTRACTED"
+          }
+        },
+        {
+          "severity": "HIGH",
+          "category": "INSTITUTION_TYPE_ERROR",
+          "field": "university_institution_type",
+          "current_value": "Technical University",
+          "correct_value": "University of Applied Sciences",
+          "description": "'Technische Hochschule Deggendorf' is classified as 'Technical University' but should be 'University of Applied Sciences'. A 'Technische Hochschule' (TH) is a 'University of Applied Sciences' (FH), NOT a 'Technical University' (TU).",
+          "recommended_action": "Change university_institution_type to 'University of Applied Sciences'.",
+          "correction": {
+            "university_institution_type": "University of Applied Sciences"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Bavaria",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Bavaria'.",
+          "correction": {
+            "university_federal_state": "Bavaria"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w71729.json",
+      "university_name_raw": "Munich University of Technology",
+      "university_name_canonical": "Munich University of Technology",
+      "programme_name": "Data & Society",
+      "issues": [
+        {
+          "severity": "HIGH",
+          "category": "DATA_SOURCE_MISLABEL",
+          "field": "data_source / _data_source",
+          "current_values": {
+            "data_source": "FALLBACK_GENERATED",
+            "_data_source": "GEMINI_EXTRACTED"
+          },
+          "description": "Conflicting provenance tags: 'data_source'='FALLBACK_GENERATED' vs '_data_source'='GEMINI_EXTRACTED'. The hydration script uses '_data_source' for DB ingestion, so the DB record will be tagged as 'GEMINI_EXTRACTED' regardless.",
+          "recommended_action": "Align both fields. If the data was correctly extracted, set both to 'GEMINI_EXTRACTED'.",
+          "correction": {
+            "data_source": "GEMINI_EXTRACTED"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Bavaria",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Bavaria'.",
+          "correction": {
+            "university_federal_state": "Bavaria"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w73251.json",
+      "university_name_raw": "Albstadt-Sigmaringen University",
+      "university_name_canonical": "Albstadt-Sigmaringen University",
+      "programme_name": "Industrial Artificial Intelligence",
+      "issues": [
+        {
+          "severity": "MEDIUM",
+          "category": "INVALID_DATE",
+          "field": "deadlines.application_deadline",
+          "current_value": "0000-01-15",
+          "description": "Date has an invalid year (0000). Gemini likely couldn't determine the year from the source document.",
+          "recommended_action": "Set to null if unknown, or replace with the correct current academic year.",
+          "correction": {
+            "deadlines.application_deadline": null
+          }
+        },
+        {
+          "severity": "MEDIUM",
+          "category": "INVALID_DATE",
+          "field": "deadlines.application_deadline",
+          "current_value": "0000-07-15",
+          "description": "Date has an invalid year (0000). Gemini likely couldn't determine the year from the source document.",
+          "recommended_action": "Set to null if unknown, or replace with the correct current academic year.",
+          "correction": {
+            "deadlines.application_deadline": null
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Baden-Württemberg",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Baden-Württemberg'.",
+          "correction": {
+            "university_federal_state": "Baden-Württemberg"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w73355.json",
+      "university_name_raw": "Universität Hamburg",
+      "university_name_canonical": "University of Hamburg",
+      "programme_name": "Data Science and Artificial Intelligence",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Data Science and Artificial Intelligence'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided text is an amendment to the examination regulations for Bachelor of Science degrees, specifically concerning the submission of the Bachelor's thesis. It does not contain any information regarding admission criteria for the 'Data Science and Artificial Intelligence' program.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w76735.json",
+      "university_name_raw": "SRH University of Applied Sciences Heidelberg",
+      "university_name_canonical": "SRH University of Applied Sciences Heidelberg",
+      "programme_name": "Artificial Intelligence (AI) in Business",
+      "issues": [
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Baden-Württemberg",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Baden-Württemberg'.",
+          "correction": {
+            "university_federal_state": "Baden-Württemberg"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w76947.json",
+      "university_name_raw": "SRH University of Applied Sciences Heidelberg",
+      "university_name_canonical": "SRH University of Applied Sciences Heidelberg",
+      "programme_name": "Information Technology - Artificial Intelligence",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Information Technology - Artificial Intelligence'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided text only details the SRH English Proficiency Certificate as an accepted language test, but does not specify the required CEFR level or score. No other admission requirements (like prior degree, GPA, ECTS) are mentioned in this document.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Baden-Württemberg",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Baden-Württemberg'.",
+          "correction": {
+            "university_federal_state": "Baden-Württemberg"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w76982.json",
+      "university_name_raw": "Karlsruhe Institute of Technology (KIT)",
+      "university_name_canonical": "Karlsruhe Institute of Technology (KIT)",
+      "programme_name": "Computational and Data Science",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_DOCUMENT_EXTRACTION",
+          "field": "contingencies.notes",
+          "description": "The Gemini extraction was run on an INCORRECT source document — not the admission/examination regulations (Prüfungsordnung/Zulassungsordnung) for 'Computational and Data Science'. All extracted data for this programme is unreliable.",
+          "evidence_snippet": "The provided text only specifies language requirements. No other admission criteria (GPA, ECTS, specific documents, deadlines) are mentioned in this document excerpt.",
+          "recommended_action": "Mark data_source as UNVERIFIED. Re-scrape the correct Prüfungsordnung and re-extract.",
+          "correction": {
+            "data_source": "UNVERIFIED",
+            "_data_source": "UNVERIFIED"
+          }
+        },
+        {
+          "severity": "CRITICAL",
+          "category": "DEGREE_TYPE_ERROR",
+          "field": "degree_type",
+          "current_value": "B.Sc.",
+          "correct_value": null,
+          "description": "This is a Bachelor's programme listed in a Master's tracker — should not be in database",
+          "recommended_action": "Remove this Bachelor's programme from the Master's tracker database.",
+          "correction": {
+            "action": "DELETE_RECORD"
+          }
+        },
+        {
+          "severity": "LOW",
+          "category": "MISSING_FEDERAL_STATE",
+          "field": "university_federal_state",
+          "current_value": null,
+          "correct_value": "Baden-Württemberg",
+          "description": "Federal state is missing from the source data but can be resolved from the university mapping service.",
+          "recommended_action": "Set university_federal_state to 'Baden-Württemberg'.",
+          "correction": {
+            "university_federal_state": "Baden-Württemberg"
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "w77134.json",
+      "university_name_raw": "Hochschule für angewandte Wissenschaften Neu-Ulm",
+      "university_name_canonical": "University of Applied Sciences Neu-Ulm",
+      "programme_name": "Angewandte Cyber Security",
+      "issues": [
+        {
+          "severity": "CRITICAL",
+          "category": "DEGREE_TYPE_ERROR",
+          "field": "degree_type",
+          "current_value": "B.Sc.",
+          "correct_value": null,
+          "description": "This is a Bachelor's programme listed in a Master's tracker — should not be in database",
+          "recommended_action": "Remove this Bachelor's programme from the Master's tracker database.",
+          "correction": {
+            "action": "DELETE_RECORD"
+          }
+        },
+        {
+          "severity": "CRITICAL",
+          "category": "WRONG_PROGRAMME_NAME",
+          "field": "program.name",
+          "current_value": "Angewandte Cyber Security",
+          "expected_value": "Digital Leadership in Information Management",
+          "description": "The extracted programme name 'Angewandte Cyber Security' does not match the expected 'Digital Leadership in Information Management' from the DAAD/scraped catalogue. The wrong PO was likely downloaded, or Gemini extracted from a document for a different programme.",
+          "recommended_action": "Verify and re-extract. If the data is actually for 'Angewandte Cyber Security', update the catalogue mapping.",
+          "correction": {
+            "program.name": "Digital Leadership in Information Management"
+          }
+        }
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    {
+      "programme_id": "w72714",
+      "university": "University of Giessen",
+      "programme_title": "Agrobioinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w76981",
+      "university": "Frankfurt University",
+      "programme_title": "AI and Digital Technology in Learning and Instruction",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w76133",
+      "university": "Munich University of Technology",
+      "programme_title": "AI in Biomedicine",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70184",
+      "university": "Munich University of Technology",
+      "programme_title": "AI in Society",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65222",
+      "university": "International School of Management",
+      "programme_title": "Applied Business Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w40883",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Applied Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w48416",
+      "university": "Technische Hochschule Deggendorf",
+      "programme_title": "Applied Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w60464",
+      "university": "Hochschule Schmalkalden",
+      "programme_title": "Applied Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64855",
+      "university": "University of Göttingen",
+      "programme_title": "Applied Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w59419",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Applied Data Science & Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64193",
+      "university": "RWTH Aachen University",
+      "programme_title": "Applied Health Informatics and Digital Medicine",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w41989",
+      "university": "Mittweida University of Applied Sciences",
+      "programme_title": "Applied Mathematics for Network and Data Sciences",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63879",
+      "university": "Hof University of Applied Sciences",
+      "programme_title": "Applied Research in Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64654",
+      "university": "University of Erlangen-Nuremberg",
+      "programme_title": "Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65719",
+      "university": "Brandenburgische Technische Universität Cottbus-Senftenberg",
+      "programme_title": "Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w66233",
+      "university": "Technische Hochschule Ingolstadt",
+      "programme_title": "Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w76659",
+      "university": "University of Bonn",
+      "programme_title": "Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64695",
+      "university": "University of Würzburg",
+      "programme_title": "Artificial Intelligence & Extended Reality",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70197",
+      "university": "University of Technology Nuremberg",
+      "programme_title": "Artificial Intelligence & Robotics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w51935",
+      "university": "University of Applied Sciences Neu-Ulm",
+      "programme_title": "Artificial Intelligence and Data Analytics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64682",
+      "university": "Technische Hochschule Deggendorf",
+      "programme_title": "Artificial Intelligence and Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72154",
+      "university": "Furtwangen University - computer science, technology, economics, media, health",
+      "programme_title": "Artificial Intelligence and Data Science for Digital Business Management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70018",
+      "university": "University of Bremen",
+      "programme_title": "Artificial Intelligence and Intelligent Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w21156",
+      "university": "Chemnitz University of Technology",
+      "programme_title": "Automotive Software Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7153",
+      "university": "Bonn-Rhine-Sieg University of Applied Sciences",
+      "programme_title": "Autonomous Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w37487",
+      "university": "University of Jena",
+      "programme_title": "Biochemistry",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64741",
+      "university": "University of Halle-Wittenberg",
+      "programme_title": "Biodiversity Sciences",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w24840",
+      "university": "University of Potsdam",
+      "programme_title": "Bioinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7880",
+      "university": "Saarland University",
+      "programme_title": "Bioinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w75171",
+      "university": "Rhineland-Palatinate Technical University of Kaiserslautern-Landau",
+      "programme_title": "Biology – Bioinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w46757",
+      "university": "University of Ulm",
+      "programme_title": "Biophysics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w26555",
+      "university": "University of Mannheim",
+      "programme_title": "Business computing",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w5845",
+      "university": "Furtwangen University - computer science, technology, economics, media, health",
+      "programme_title": "Business Consulting",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w53974",
+      "university": "University of Marburg",
+      "programme_title": "Business Informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w39354",
+      "university": "University of Passau",
+      "programme_title": "Business Informatics (Information Systems)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64844",
+      "university": "University of Applied Sciences Emden/Leer",
+      "programme_title": "Business Intelligence and Data Analytics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w40840",
+      "university": "Berlin School of Economics and Law",
+      "programme_title": "Business Intelligence and Process Management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w67239",
+      "university": "Gisma University of Applied Sciences",
+      "programme_title": "Business Management & Cybersecurity",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7727",
+      "university": "University of Marburg",
+      "programme_title": "Business Mathematics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w33754",
+      "university": "Munich University of Technology",
+      "programme_title": "Cartography",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w39856",
+      "university": "Technische Universität Dresden",
+      "programme_title": "Cartography",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64854",
+      "university": "University of Potsdam",
+      "programme_title": "Climate, Earth, Water, Sustainability",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63932",
+      "university": "University of Osnabrück",
+      "programme_title": "Cognitive Computing",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w40119",
+      "university": "Ruhr University Bochum",
+      "programme_title": "Cognitive Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w6156",
+      "university": "University of Osnabrück",
+      "programme_title": "Cognitive Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63850",
+      "university": "Technical University of Darmstadt",
+      "programme_title": "Cognitive Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w44744",
+      "university": "University of Potsdam",
+      "programme_title": "Cognitive Systems: Language, Learning and Reasoning",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65338",
+      "university": "University of Göttingen",
+      "programme_title": "Computational Biology and Bioinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w6061",
+      "university": "Ruhr University Bochum",
+      "programme_title": "Computational Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w6164",
+      "university": "University of Erlangen-Nuremberg",
+      "programme_title": "Computational Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7029",
+      "university": "University of Rostock",
+      "programme_title": "Computational Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w39397",
+      "university": "University of Stuttgart",
+      "programme_title": "Computational Linguistics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w6207",
+      "university": "Munich University of Technology",
+      "programme_title": "Computational Mechanics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w57774",
+      "university": "University of Hannover",
+      "programme_title": "Computational Methods in Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w68078",
+      "university": "University of Magdeburg",
+      "programme_title": "Computational Methods in Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w61589",
+      "university": "Technische Universität Dresden",
+      "programme_title": "Computational Modelling and Simulation",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w15527",
+      "university": "Berlin University of Technology",
+      "programme_title": "Computational Neuroscience",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w32499",
+      "university": "Eberhard Karls University Tübingen",
+      "programme_title": "Computational Neuroscience",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w21012",
+      "university": "Technical University of Hamburg",
+      "programme_title": "Computational Science and Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w6204",
+      "university": "Munich University of Technology",
+      "programme_title": "Computational Science and Engineering (CSE)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w5668",
+      "university": "Technical University Braunschweig",
+      "programme_title": "Computational science in engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w54278",
+      "university": "Free University Berlin",
+      "programme_title": "Computational Sciences",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w6312",
+      "university": "University of Konstanz",
+      "programme_title": "Computer and Information Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65163",
+      "university": "Hochschule Nordhausen",
+      "programme_title": "Computer Engineering for IOT SYSTEMS",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w42091",
+      "university": "University of Stuttgart",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w46833",
+      "university": "Technical University of Hamburg",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w61896",
+      "university": "University of Siegen",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64341",
+      "university": "IU International University",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w12313",
+      "university": "University of Freiburg",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w12519",
+      "university": "Rhineland-Palatinate Technical University of Kaiserslautern-Landau",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w18320",
+      "university": "University of Bonn",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w67238",
+      "university": "Gisma University of Applied Sciences",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w69295",
+      "university": "Technical University of Darmstadt",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70166",
+      "university": "University of Hannover",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72013",
+      "university": "University of Applied Sciences Fresenius",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72984",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73116",
+      "university": "Karlsruhe Institute of Technology (KIT)",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73744",
+      "university": "University of Regensburg",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w74171",
+      "university": "Ruhr University Bochum",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7683",
+      "university": "Paderborn University",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7728",
+      "university": "University of Marburg",
+      "programme_title": "Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7881",
+      "university": "Saarland University",
+      "programme_title": "Computer science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w15731",
+      "university": "Berlin University of Technology",
+      "programme_title": "Computer Science (Informatik)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w61451",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Computer Science - Cyber Security",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w68298",
+      "university": "Constructor University",
+      "programme_title": "Computer Science and Software Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70337",
+      "university": "University of Potsdam",
+      "programme_title": "Computer Science at the Hasso Plattner Institute",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w56915",
+      "university": "Bauhaus-Universität Weimar",
+      "programme_title": "Computer Science for Digital Media",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73043",
+      "university": "University of Konstanz",
+      "programme_title": "Computer Science for Industry and Business (COSIB)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65237",
+      "university": "University of Rostock",
+      "programme_title": "Computer Science International",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w46838",
+      "university": "Munich University of Technology",
+      "programme_title": "Computer Science: Games Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7604",
+      "university": "University of Wuppertal",
+      "programme_title": "Computer Simulation in Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w61781",
+      "university": "Technical University of Applied Sciences of Central Hesse - THM",
+      "programme_title": "Control, Computer and Communications Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58891",
+      "university": "Brandenburgische Technische Universität Cottbus-Senftenberg",
+      "programme_title": "Cyber Security",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64105",
+      "university": "Hochschule der Bayerischen Wirtschaft für angewandte Wissenschaften - HDBW",
+      "programme_title": "Cyber Security",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64998",
+      "university": "Saarland University",
+      "programme_title": "Cybersecurity",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w55328",
+      "university": "University of Hildesheim",
+      "programme_title": "Data Analytics (International Master’s degree)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w60434",
+      "university": "RWTH Aachen University",
+      "programme_title": "Data Analytics and Decision Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7675",
+      "university": "Heidelberg University",
+      "programme_title": "Data and Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63866",
+      "university": "Technical University of Darmstadt",
+      "programme_title": "Data and Discourse Studies",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7429",
+      "university": "University of Magdeburg",
+      "programme_title": "Data and Knowledge Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w49857",
+      "university": "Constructor University",
+      "programme_title": "Data Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w54981",
+      "university": "Munich University of Technology",
+      "programme_title": "Data Engineering and Analytics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w53975",
+      "university": "University of Marburg",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58177",
+      "university": "Berlin University of Applied Sciences",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w60824",
+      "university": "Bielefeld University",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w61588",
+      "university": "University of Trier",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64061",
+      "university": "Free University Berlin",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64134",
+      "university": "IU International University",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64410",
+      "university": "RWTH Aachen University",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64790",
+      "university": "University of Erlangen-Nuremberg",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64805",
+      "university": "Technical University Braunschweig",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65199",
+      "university": "University of Europe for Applied Sciences",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w66982",
+      "university": "Technical University of Hamburg",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w69119",
+      "university": "Fulda University of Applied Sciences",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70182",
+      "university": "University of Greifswald",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72756",
+      "university": "Technische Universität Ilmenau",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72869",
+      "university": "Catholic University in Eichstätt - Ingolstadt",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73001",
+      "university": "University of Augsburg",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73519",
+      "university": "University of Regensburg",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w74901",
+      "university": "XU Exponential University of Applied Sciences",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w76328",
+      "university": "University of Münster",
+      "programme_title": "Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70803",
+      "university": "Bielefeld University of Applied Sciences and Arts (HSBI)",
+      "programme_title": "Data Science (Research Master)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63909",
+      "university": "Saarland University",
+      "programme_title": "Data Science and Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73210",
+      "university": "University of Oldenburg",
+      "programme_title": "Data Science and Machine Learning",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73395",
+      "university": "TU Dortmund University",
+      "programme_title": "Data Science in Sports and Health",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w76998",
+      "university": "University of Erlangen-Nuremberg",
+      "programme_title": "Data Science of Human Multimodal Communication (MULTICOM)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64772",
+      "university": "Gisma University of Applied Sciences",
+      "programme_title": "Data Science, AI and Digital Business",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72981",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Data Science: Business Analytics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w44336",
+      "university": "Rhine-Waal University of Applied Sciences",
+      "programme_title": "Design and Interaction",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70241",
+      "university": "University of Europe for Applied Sciences",
+      "programme_title": "DevOps",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w67862",
+      "university": "IU International University",
+      "programme_title": "DevOps and Cloud Computing",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w59183",
+      "university": "Hochschule der Bayerischen Wirtschaft für angewandte Wissenschaften - HDBW",
+      "programme_title": "Digital Business Modelling and Entrepreneurship",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58999",
+      "university": "Bauhaus-Universität Weimar",
+      "programme_title": "Digital Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64371",
+      "university": "European University Viadrina Frankfurt (Oder)",
+      "programme_title": "Digital Entrepreneurship",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w51043",
+      "university": "Technische Hochschule Deggendorf",
+      "programme_title": "Digital Health",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w67297",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Digital Health and Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w60523",
+      "university": "University of Potsdam",
+      "programme_title": "Digital Health at the Hasso Plattner Institute",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64964",
+      "university": "University of Applied Sciences Neu-Ulm",
+      "programme_title": "Digital Innovation Management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64881",
+      "university": "Technische Hochschule Köln",
+      "programme_title": "Digital Sciences",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w67457",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Digital Supply Chain Management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58006",
+      "university": "Dortmund University of Applied Sciences and Arts",
+      "programme_title": "Digital Transformation",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63861",
+      "university": "XU Exponential University of Applied Sciences",
+      "programme_title": "Digital Transformation & Sustainability",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64728",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Digital Transformation Management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65263",
+      "university": "University of Bayreuth",
+      "programme_title": "Digitalisation & Sustainability in Materials Science & Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w40009",
+      "university": "University of Koblenz",
+      "programme_title": "E-Government",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w34385",
+      "university": "Saarland University",
+      "programme_title": "Educational Technology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72321",
+      "university": "West Saxon University of Applied Sciences of Zwickau",
+      "programme_title": "Embedded and Autonomous Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58645",
+      "university": "Saarland University",
+      "programme_title": "Embedded Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w40759",
+      "university": "University of Freiburg",
+      "programme_title": "Embedded Systems Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w46655",
+      "university": "Dortmund University of Applied Sciences and Arts",
+      "programme_title": "Embedded Systems Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70007",
+      "university": "University of Applied Sciences Bremen",
+      "programme_title": "Engineering and Management of Space Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70345",
+      "university": "University of Siegen",
+      "programme_title": "Engineering of Hydro-environmental Extremes",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58377",
+      "university": "University of Oldenburg",
+      "programme_title": "Engineering of Socio-Technical Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63849",
+      "university": "University of Applied Sciences Offenburg",
+      "programme_title": "Enterprise and IT Security",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64706",
+      "university": "Technische Hochschule Ingolstadt",
+      "programme_title": "Entrepreneurship and Corporate Venturing",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w35054",
+      "university": "Rhineland-Palatinate Technical University of Kaiserslautern-Landau",
+      "programme_title": "European Master's degree in Embedded Computing Systems (EMECS)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w31781",
+      "university": "Karlsruhe Institute of Technology (KIT)",
+      "programme_title": "Financial Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w9520",
+      "university": "Eberswalde University for Sustainable Development",
+      "programme_title": "Forest Information Technology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64989",
+      "university": "University of Applied Sciences for Medium-Sized Companies (FHM)",
+      "programme_title": "General Technology Management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70242",
+      "university": "University of Europe for Applied Sciences",
+      "programme_title": "Generative Design & AI",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w39353",
+      "university": "University of Augsburg",
+      "programme_title": "Geo-informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64461",
+      "university": "University of Trier",
+      "programme_title": "Geo-informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63807",
+      "university": "University of Hannover",
+      "programme_title": "Geodesy and Geoinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w17259",
+      "university": "Munich University of Technology",
+      "programme_title": "Geodesy and Geoinformation",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w12886",
+      "university": "Berlin University of Technology",
+      "programme_title": "Geodesy and Geoinformation Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w20658",
+      "university": "University of Münster",
+      "programme_title": "Geoinformatics and Spatial Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w6340",
+      "university": "Karlsruhe University of Applied Sciences",
+      "programme_title": "Geomatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w14504",
+      "university": "University of Applied Sciences Neubrandenburg",
+      "programme_title": "Geomatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w48425",
+      "university": "Fulda University of Applied Sciences",
+      "programme_title": "Global Software Development",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w9362",
+      "university": "Frankfurt University of Applied Sciences",
+      "programme_title": "High Integrity Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64732",
+      "university": "Technische Hochschule Deggendorf",
+      "programme_title": "High performance computing / quantum computing",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72570",
+      "university": "University of Technology Nuremberg",
+      "programme_title": "Human & Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w19928",
+      "university": "Sports University of Cologne",
+      "programme_title": "Human Technology in Sports and Medicine",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73745",
+      "university": "University of Regensburg",
+      "programme_title": "Human-Centred Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7078",
+      "university": "RWTH Aachen University",
+      "programme_title": "Human-Centred Intelligent System",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w44824",
+      "university": "Bauhaus-Universität Weimar",
+      "programme_title": "Human-Computer Interaction",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w29058",
+      "university": "University of Siegen",
+      "programme_title": "Human-Computer Interaction",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w29281",
+      "university": "University of Applied Sciences Emden/Leer",
+      "programme_title": "Industrial Informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w76948",
+      "university": "SRH University of Applied Sciences Heidelberg",
+      "programme_title": "Infomation Technology and Business Transformation",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65029",
+      "university": "South Westphalia University of Applied Sciences",
+      "programme_title": "Informatics and Business",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72904",
+      "university": "Hamburg University of Applied Sciences",
+      "programme_title": "Information and Communications Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w44338",
+      "university": "Rhine-Waal University of Applied Sciences",
+      "programme_title": "Information Engineering and Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70911",
+      "university": "Munich University of Technology",
+      "programme_title": "Information Engineering at Heilbronn Campus",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w22519",
+      "university": "University of Münster",
+      "programme_title": "Information Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70248",
+      "university": "FH Aachen - University of Applied Sciences",
+      "programme_title": "Information Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7857",
+      "university": "Munich University of Technology",
+      "programme_title": "Information Systems (Business Informatics)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64274",
+      "university": "Karlsruhe Institute of Technology (KIT)",
+      "programme_title": "Information Systems Engineering and Management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65257",
+      "university": "Munich University of Technology",
+      "programme_title": "Information Technologies for the Built Environment",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72436",
+      "university": "Media Design University for Design and Computer Science",
+      "programme_title": "Information Technology - Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72437",
+      "university": "Media Design University for Design and Computer Science",
+      "programme_title": "Information Technology - Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58775",
+      "university": "University of Giessen",
+      "programme_title": "Insect Biotechnology and Bioresources",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w39157",
+      "university": "University of Hamburg",
+      "programme_title": "Intelligent Adaptive Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73172",
+      "university": "Technische Hochschule Brandenburg",
+      "programme_title": "Interactive Media",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w32587",
+      "university": "University of Halle-Wittenberg",
+      "programme_title": "International Area Studies - Global Change Geography",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w22630",
+      "university": "University of Erlangen-Nuremberg",
+      "programme_title": "International Information Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w44254",
+      "university": "South Westphalia University of Applied Sciences",
+      "programme_title": "International Management & Information Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63892",
+      "university": "South Westphalia University of Applied Sciences",
+      "programme_title": "International Management & Information Systems-online (career-integrated continuing combined degree course)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w76837",
+      "university": "Augsburg University of Applied Sciences",
+      "programme_title": "International Master of Research and Innovation",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w49047",
+      "university": "Bamberg University",
+      "programme_title": "International Software Systems Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65273",
+      "university": "West Saxon University of Applied Sciences of Zwickau",
+      "programme_title": "Internet of Things and Smart Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70240",
+      "university": "University of Europe for Applied Sciences",
+      "programme_title": "IoT Devices & Smart Services",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w49070",
+      "university": "Fachhochschule of Wedel",
+      "programme_title": "IT Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w55385",
+      "university": "Lübeck University",
+      "programme_title": "IT Security",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w29660",
+      "university": "Technical University of Darmstadt",
+      "programme_title": "IT Security",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w49886",
+      "university": "University of Hohenheim",
+      "programme_title": "Landscape Ecology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w43856",
+      "university": "Saarland University",
+      "programme_title": "Language and Communication Technologies M.Sc./M.A.",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7425",
+      "university": "Saarland University",
+      "programme_title": "Language, Science and Technology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64037",
+      "university": "Technische Hochschule Deggendorf",
+      "programme_title": "Life Science Informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7129",
+      "university": "University of Bonn",
+      "programme_title": "Life Science Informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64325",
+      "university": "Technical University of Darmstadt",
+      "programme_title": "Logistics and supply chain management",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63840",
+      "university": "Eberhard Karls University Tübingen",
+      "programme_title": "Machine Learning",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w49048",
+      "university": "Leuphana University Lüneburg",
+      "programme_title": "Management & Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w55377",
+      "university": "Ludwig Maximilians University Munich",
+      "programme_title": "Management and Digital Technologies",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70087",
+      "university": "West Saxon University of Applied Sciences of Zwickau",
+      "programme_title": "Management and Information Technology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65376",
+      "university": "University of Bremen",
+      "programme_title": "Management Information Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w55352",
+      "university": "University of Mannheim",
+      "programme_title": "Mannheim Master in Data Science (MMDS)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64074",
+      "university": "University of Mannheim",
+      "programme_title": "Mannheim Master in Management Analytics and AI",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64350",
+      "university": "University of Mannheim",
+      "programme_title": "Mannheim Master of Applied Data Science & Measurement",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w63568",
+      "university": "University of Hamburg",
+      "programme_title": "Marine Ecosystem and Fisheries Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65065",
+      "university": "University of Mannheim",
+      "programme_title": "Master in Management Analytics (Full-Time)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w66100",
+      "university": "Hertie School",
+      "programme_title": "Master of Data Science for Public Policy",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w67189",
+      "university": "ESMT European School of Management and Technology",
+      "programme_title": "Master's in Analytics and Artificial Intelligence",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72710",
+      "university": "Brandenburgische Technische Universität Cottbus-Senftenberg",
+      "programme_title": "Mathematical Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w59180",
+      "university": "University of Passau",
+      "programme_title": "Mathematics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w28710",
+      "university": "University of Jena",
+      "programme_title": "Mathematics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w54198",
+      "university": "Saarland University",
+      "programme_title": "Mathematics and Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w73002",
+      "university": "University of Augsburg",
+      "programme_title": "Mathematics and Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w55325",
+      "university": "Munich University of Technology",
+      "programme_title": "Mathematics in Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72792",
+      "university": "Heidelberg University",
+      "programme_title": "Mathematics of Machine Learning and Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65599",
+      "university": "Technical University of Applied Sciences Würzburg-Schweinfurt",
+      "programme_title": "MBA Transformation",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w71907",
+      "university": "German International University",
+      "programme_title": "Media Engineering and Technology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w42509",
+      "university": "Saarland University",
+      "programme_title": "Media Informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65058",
+      "university": "University of Augsburg",
+      "programme_title": "Medical Information Sciences",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72322",
+      "university": "Munich University of Technology",
+      "programme_title": "Microelectronics and Chip Design",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w58173",
+      "university": "University of Magdeburg",
+      "programme_title": "Operations Research and Business Analytics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w70334",
+      "university": "University of Bayreuth",
+      "programme_title": "Philosophy & Computer Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w5604",
+      "university": "Stuttgart University of Applied Sciences",
+      "programme_title": "Photogrammetry and Geoinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65229",
+      "university": "Berlin School of Applied Sciences (HTW)",
+      "programme_title": "Professional IT Business and Digitalisation",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w56355",
+      "university": "Berlin School of Applied Sciences (HTW)",
+      "programme_title": "Project Management and Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w77369",
+      "university": "Saarland University",
+      "programme_title": "Quanteninformationstheorie",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w68439",
+      "university": "University of Siegen",
+      "programme_title": "Quantum Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w67867",
+      "university": "Technical University Braunschweig",
+      "programme_title": "Quantum Technologies in Electrical and Computer Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w61854",
+      "university": "Karlsruhe Institute of Technology (KIT)",
+      "programme_title": "Remote Sensing and Geoinformatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w55386",
+      "university": "Lübeck University",
+      "programme_title": "Robotics and Autonomous Systems",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w72471",
+      "university": "Fresenius Heidelberg University\tstate-approved university of Hochschule Fresenius für Internationales Management GmbH",
+      "programme_title": "SAP Engineering & Analytics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w61581",
+      "university": "University of Würzburg",
+      "programme_title": "Satellite Technology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w29632",
+      "university": "RWTH Aachen University",
+      "programme_title": "Simulation Sciences",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w42184",
+      "university": "University of Konstanz",
+      "programme_title": "Social and Economic Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w42527",
+      "university": "Rhineland-Palatinate Technical University of Kaiserslautern-Landau",
+      "programme_title": "Social Informatics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w74173",
+      "university": "Technische Hochschule Ingolstadt",
+      "programme_title": "Sociotechnical Cybersecurity",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w71290",
+      "university": "University of Hildesheim",
+      "programme_title": "Software Engineering (International Master’s degree)",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w7790",
+      "university": "Hof University of Applied Sciences",
+      "programme_title": "Software Engineering for Industrial Applications",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w5622",
+      "university": "RWTH Aachen University",
+      "programme_title": "Software Systems Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w5965",
+      "university": "Stuttgart University of Applied Sciences",
+      "programme_title": "Software Technology",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64848",
+      "university": "Technische Universität Dresden",
+      "programme_title": "Transportation Economics",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w31435",
+      "university": "Rhine-Waal University of Applied Sciences",
+      "programme_title": "Usability Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w64245",
+      "university": "Technische Hochschule Ingolstadt",
+      "programme_title": "User Experience Design",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w16715",
+      "university": "Saarland University",
+      "programme_title": "Visual Computing",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w65043",
+      "university": "University of Magdeburg",
+      "programme_title": "Visual Computing",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w39452",
+      "university": "University of Koblenz",
+      "programme_title": "Web and Data Science",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    },
+    {
+      "programme_id": "w49156",
+      "university": "Chemnitz University of Technology",
+      "programme_title": "Web Engineering",
+      "description": "Programme exists in scraped catalogue but has NO extracted admission rules."
+    }
+  ]
+}

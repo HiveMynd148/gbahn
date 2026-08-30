@@ -1,0 +1,84 @@
+{
+  "university_name": "Technische Hochschule Würzburg-Schweinfurt",
+  "university_location": "Würzburg-Schweinfurt",
+  "university_federal_state": "Bayern",
+  "university_institution_type": "Technical University of Applied Sciences",
+  "university_website_url": null,
+  "program": {
+    "name": "Artificial Intelligence",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": null,
+    "total_ects_required": 90,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": 2.5,
+        "total_ects_required": 210,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": 20.0,
+          "cs": 15.0,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "ein mit 210 Leistungspunkten gemäß European Credit Transfer and Accumulation System (ECTS, im Folgenden als ECTS-Punkte bezeichnet) und einer Gesamtnote von 2,5 oder besser abgeschlossenes Hochschulstudium der Fachrichtung Informatik einer deutschen Hochschule oder einen gleichwertigen Abschluss.",
+        "core_reference_pillars": [
+          "Informatik"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 30,
+        "notes": "Applicants with 180-209 ECTS may be provisionally admitted; missing ECTS must be obtained through specific modules or equivalent knowledge, confirmed by the examination board, and proven by the end of the first semester. If the qualifying degree did not include a practical semester or corresponding practical phase, 20 weeks of relevant full-time professional experience (obtained after the first professional qualifying degree) can be submitted as proof of missing entry requirements, demonstrated via a qualified work certificate or interim reference. Conditional admission is also possible for applicants who cannot present a final bachelor's degree certificate at the time of application, provided they have demonstrably a maximum of 30 ECTS outstanding and can prove that the required overall grade can principally be achieved. The final degree certificate must be submitted within one semester after study begin."
+      }
+    },
+    "deadlines": [],
+    "required_documents": [
+      {
+        "document_name": "Final Degree Certificate",
+        "is_mandatory": true,
+        "notes": "Required, or conditional admission possible with a university certificate if not yet completed."
+      },
+      {
+        "document_name": "Transcript of Records",
+        "is_mandatory": true,
+        "notes": "To demonstrate ECTS and GPA."
+      },
+      {
+        "document_name": "Proof of English Language Proficiency",
+        "is_mandatory": true,
+        "notes": "Specific requirements are in the THWS enrollment regulations (Immatrikulationssatzung)."
+      },
+      {
+        "document_name": "University Certificate proving potential GPA attainment",
+        "is_mandatory": true,
+        "notes": "Mandatory for conditional admission if bachelor's degree is pending."
+      },
+      {
+        "document_name": "Qualified Work Certificate / Interim Reference",
+        "is_mandatory": false,
+        "notes": "Mandatory if compensating for a missing practical semester/phase in the first degree by demonstrating 20 weeks of relevant full-time professional experience."
+      },
+      {
+        "document_name": "Proof of Advanced Programming Skills",
+        "is_mandatory": true,
+        "notes": "Typically evidenced by work samples from programming projects, internships, labs, and/or the scientific thesis."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

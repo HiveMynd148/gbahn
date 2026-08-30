@@ -1,0 +1,57 @@
+{
+  "university_name": "Munich University of Technology",
+  "university_location": "Munich",
+  "university_federal_state": null,
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Data & Society",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": "C1",
+    "min_ielts_score": 6.5,
+    "min_german_level": "None",
+    "total_ects_required": 120,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": 180,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "A first university degree qualifying for a profession (e.g. a Bachelor's degree or equivalent) in a field related to Computer Science, Engineering, Social Sciences, Political Sciences, or Economics.",
+        "core_reference_pillars": [
+          "Computer Science",
+          "Engineering",
+          "Social Sciences",
+          "Political Sciences",
+          "Economics"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": null
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "FALLBACK_GENERATED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

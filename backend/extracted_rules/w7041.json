@@ -1,0 +1,51 @@
+{
+  "university_name": "Technische Universität Dortmund",
+  "university_location": "Dortmund",
+  "university_federal_state": "North Rhine-Westphalia",
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Data Science",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": null,
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": null,
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": null,
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "The provided document is 'Regulations for the Submission of Final Theses' and does not contain any information regarding admission requirements for the Data Science Master's program. Therefore, specific admission criteria could not be extracted."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "FALLBACK_GENERATED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

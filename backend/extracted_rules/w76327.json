@@ -1,0 +1,105 @@
+{
+  "university_name": "Heilbronn University of Applied Sciences",
+  "university_location": "Heilbronn",
+  "university_federal_state": "Baden-Württemberg",
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": null,
+  "program": {
+    "name": "Applied Artificial Intelligence",
+    "degree_type": "M.Sc.",
+    "nc_status": "LOCAL_NC",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": "B2",
+    "min_ielts_score": 6.0,
+    "min_german_level": "None",
+    "total_ects_required": 210,
+    "min_gpa_german_scale": 2.5,
+    "gre_required": "Not Required",
+    "is_free_tuition": false,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": 2.5,
+        "total_ects_required": 210,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": 10.0,
+          "cs": 10.0,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "a higher education degree obtained in Germany or abroad with at least a Bachelor’s degree or an equivalent qualification as defined in Section 29 (2) sentence 3 LHG with a workload of at least 210 ECTS credits. The qualifying first degree under no. 1 includes a degree from the fields of Computer Science, Engineering, Business Administration, or related scientific disciplines with a similar subject orientation.",
+        "core_reference_pillars": [
+          "Computer Science",
+          "Engineering",
+          "Business Administration",
+          "Mathematics",
+          "Artificial Intelligence"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 30,
+        "notes": "Applicants holding a degree of at least 180 ECTS credits may be admitted under conditions. If conditionally admitted due to missing ECTS to reach 210, these must be earned before registering the Master’s Thesis. The qualifying first degree must include at least 50 ECTS credits in total across Mathematics, Computer Science, and Artificial Intelligence, with at least 10 ECTS credits in each of these three areas. A maximum of 30 ECTS credits for subject-specific fit may be completed after admission but before registering the Master’s Thesis. If conditionally admitted due to missing English language proof, it must be submitted by the beginning of the second semester. Exceptions to the 2.5 GPA requirement (or ECTS grade B) may be granted in particularly justified cases (e.g., previous education, professional experience, or other specific qualifications) indicating particular suitability for the Master's Program. These exception cases may not exceed 20% of the admission capacity."
+      }
+    },
+    "deadlines": [
+      {
+        "applicant_origin": "ALL",
+        "semester": "SUMMER",
+        "portal_opens": null,
+        "application_deadline": null
+      }
+    ],
+    "required_documents": [
+      {
+        "document_name": "Copy of the higher education entrance qualification",
+        "is_mandatory": true,
+        "notes": null
+      },
+      {
+        "document_name": "Copies of the professional qualifying higher education degree (certificate and diploma)",
+        "is_mandatory": true,
+        "notes": null
+      },
+      {
+        "document_name": "Transcript of records listing all subjects with individual grades of the higher education degree",
+        "is_mandatory": true,
+        "notes": null
+      },
+      {
+        "document_name": "Applicant information sheet for the Master’s Program Applied Artificial Intelligence, including details of subject-specific fit (Appendix 1)",
+        "is_mandatory": true,
+        "notes": "Must list courses and ECTS from Mathematics, Computer Science, and Artificial Intelligence matching the transcript of records."
+      },
+      {
+        "document_name": "Curriculum Vitae (in tabular form)",
+        "is_mandatory": true,
+        "notes": null
+      },
+      {
+        "document_name": "Proof of language proficiency",
+        "is_mandatory": true,
+        "notes": "Conditional admission allowed if missing, must be submitted by beginning of second semester."
+      },
+      {
+        "document_name": "Translations into German or English",
+        "is_mandatory": true,
+        "notes": "Required if original documents are in a language other than German or English."
+      },
+      {
+        "document_name": "Provisional Bachelor’s Certificate or transcript of records",
+        "is_mandatory": false,
+        "notes": "Required if Bachelor’s certificate has not yet been received by the application deadline, showing current average grade and total ECTS earned."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

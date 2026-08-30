@@ -1,0 +1,57 @@
+{
+  "university_name": "SRH University of Applied Sciences Heidelberg",
+  "university_location": "Heidelberg",
+  "university_federal_state": null,
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": null,
+  "program": {
+    "name": "Computer Science - Big Data and Artificial Intelligence",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": false,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": false,
+        "equivalence_statement_raw": null,
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "The SRH English Proficiency Certificate is an English language test offered by SRH University, powered by Password Skills Plus, and is available to international students to meet the English language requirement for admission. The test covers four skills (Reading, Writing, Listening, Speaking) and has a duration of 3 hours and 5 minutes. Results are usually considered valid for up to 2 years. Students may take the test up to three times (initial test + 2 retakes), with the third retake requiring a waiting period of one month."
+      }
+    },
+    "deadlines": [],
+    "required_documents": [
+      {
+        "document_name": "English Proficiency Certificate",
+        "is_mandatory": true,
+        "notes": "Can be fulfilled by the SRH English Proficiency Certificate (powered by Password Skills Plus)."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

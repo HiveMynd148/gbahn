@@ -1,0 +1,56 @@
+{
+  "university_name": "Heinrich-Heine-Universit\n\n\n\nt D\n\n\n\nsseldorf",
+  "university_location": "D\n\n\n\nsseldorf",
+  "university_federal_state": "Nordrhein-Westfalen",
+  "university_institution_type": "University",
+  "university_website_url": "www.hhu.de",
+  "program": {
+    "name": "Artificial Intelligence and Data Science",
+    "degree_type": "Master of Science",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": 120,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": 180,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "Der erforderliche erste berufsqualifizierende Studienabschluss kann in den F\n\n\n\nchern Mathematik, Physik, Informatik, Elektrotechnik oder in einem nahe verwandten Fach vorliegen. sowie die besondere Bef\n\n\n\nhigung zum wissenschaftlichen Arbeiten. Die Einzelheiten und die genaue Vorgangsweise sind in der \n\n\n\nOrdnung f\n\n\n\nr die Feststellung der besonderen Eignung\n\n\n\n f\n\n\n\nr den entsprechenden Masterstudiengang geregelt.",
+        "core_reference_pillars": [
+          "Mathematics",
+          "Physics",
+          "Informatics",
+          "Electrical Engineering"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 20,
+        "notes": "Conditional admission is possible with a minimum of 160 ECTS in a Bachelor's degree, provided that the eligibility according to the \"Ordnung f\n\n\n\nr die Feststellung der besonderen Eignung\" is confirmed. The provisional enrollment expires if a first professional qualifying degree is not proven within six months from the first day of enrollment. Already completed modules that correspond in content and scope to the compulsory modules can be credited. The missing ECTS credits must then be obtained through elective modules."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

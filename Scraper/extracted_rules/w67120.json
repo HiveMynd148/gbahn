@@ -1,0 +1,72 @@
+{
+  "university_name": "Hof University of Applied Sciences",
+  "university_location": "Hof",
+  "university_federal_state": "Bavaria",
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": null,
+  "program": {
+    "name": "Marketing Management",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "German",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": null,
+    "total_ects_required": 90,
+    "min_gpa_german_scale": 2.5,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": 2.5,
+        "total_ects_required": 210,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "A university degree that led to the acquisition of 210 ECTS credits is required. This admission requirement is considered fulfilled if a university degree that led to the acquisition of 180 ECTS credits has been completed, and an additional 30 ECTS credits have been acquired according to § 7 (1) or (2). The university degree must have been completed with a minimum overall grade of 2.5 on the grading system used at Hof University or an equivalent grading system. Alternatively, a minimum grade of 3.0 or an equivalent grade is sufficient if special achievements have demonstrated competencies that are at least equivalent to those required in the previous sentence. Special achievements in this sense include, in particular, studies abroad or relevant professional experience. The university degree must have been in a business or economics study program. A university degree in another study program is considered equivalent if modules for the acquisition of economics/business competencies totaling 30 ECTS credits have been completed according to § 7 (2) Satz 2.",
+        "core_reference_pillars": [
+          "Business or Economics study program",
+          "Ability to structure interdisciplinary problems",
+          "Ability to recognize entrepreneurial options",
+          "Ability to discuss possible future developments"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 30,
+        "notes": "If the qualifying bachelor's degree was 180 ECTS, an additional 30 ECTS must be acquired as a 'Nachqualifikation' according to § 7 (1) or (2) to reach 210 ECTS. If the qualifying bachelor's degree was not in a business or economics study program, 30 ECTS in economics/business competencies must be completed according to § 7 (2) Satz 2."
+      }
+    },
+    "deadlines": [],
+    "required_documents": [
+      {
+        "document_name": "Lebenslauf (CV)",
+        "is_mandatory": true,
+        "notes": "Approximately one DIN A4 page in length. Used to assess if the master's study fits meaningfully into the applicant's academic and professional career."
+      },
+      {
+        "document_name": "Motivationsschreiben (Motivation Letter)",
+        "is_mandatory": true,
+        "notes": "Approximately two DIN A4 pages in length. Explains expectations for the program and reasons for applying. Used to assess the applicant's special motivation."
+      },
+      {
+        "document_name": "Kurze schriftliche Erörterung (Short written discussion/essay)",
+        "is_mandatory": true,
+        "notes": "Approximately two DIN A4 pages in length. Discusses a current event from public media (e.g., an acquisition, diversification, relocation) that highlights an important marketing or management issue. Must present company goals, explain action options, and estimate future developments."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

@@ -1,0 +1,51 @@
+{
+  "university_name": "Hochschule für angewandte Wissenschaften Neu-Ulm",
+  "university_location": "Neu-Ulm",
+  "university_federal_state": "Bayern",
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": null,
+  "program": {
+    "name": "Angewandte Cyber Security",
+    "degree_type": "B.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "German",
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": null,
+    "total_ects_required": 210,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": false,
+        "equivalence_statement_raw": "Die Qualifikations- und Zugangsvoraussetzungen sind in der Satzung über das Zulassungs-, Immatrikulations-, Beurlaubungs-, Rückmelde- und Exmatrikulationsverfahren an der Hochschule Neu-Ulm vom 25.01.2016 in der jeweils gültigen Fassung geregelt.",
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "The qualification and admission requirements for this Bachelor's program are regulated in a separate document: the statutes on the admission, enrollment, leave of absence, re-registration, and exmatriculation procedure at Hochschule Neu-Ulm from 25.01.2016."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

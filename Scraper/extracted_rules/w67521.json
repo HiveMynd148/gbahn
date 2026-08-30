@@ -1,0 +1,71 @@
+{
+  "university_name": "Technische Hochschule Ingolstadt",
+  "university_location": "Ingolstadt",
+  "university_federal_state": "Bayern",
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "AI Engineering of Autonomous Systems",
+    "degree_type": "M.Eng.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": "B2",
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": 90,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": 210,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "eines Studiums an einer deutschen Hochschule mit mindestens 210 ECTS-Leistungspunkten oder äquivalentem Studienumfang in einer elektro-/informationstechnischen oder mathematischen Disziplin oder der Informatik oder ein gleichwertiger erfolgreicher in- oder ausländischer Abschluss",
+        "core_reference_pillars": [
+          "electrical/information technology",
+          "mathematics",
+          "computer science"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "Applicants with a qualifying Bachelor's degree of less than 210 ECTS, but at least 180 ECTS, will be admitted if they provide proof of having acquired the missing competencies (up to 30 ECTS credits on Bachelor level) by the application deadline. These competencies can be demonstrated through professional practical experience outside of studies or through additional study and examination achievements from an in- or foreign university. If the final degree certificate is not available by the application deadline, a confirmation from the university is required, credibly confirming the fulfillment of the degree requirement by the end of the enrollment period."
+      }
+    },
+    "deadlines": [],
+    "required_documents": [
+      {
+        "document_name": "Degree Certificate",
+        "is_mandatory": true,
+        "notes": "Proof of successful completion of a degree (min 210 ECTS or 180 ECTS with additional competencies). If not available by deadline, a confirmation that it will be fulfilled by enrollment is needed."
+      },
+      {
+        "document_name": "English Language Certificate",
+        "is_mandatory": true,
+        "notes": "Proof of sufficient English language skills (CEFR B2 level)."
+      },
+      {
+        "document_name": "Proof of Additional Competencies",
+        "is_mandatory": false,
+        "notes": "Required only if the qualifying Bachelor's degree has between 180 and 209 ECTS, proving up to 30 ECTS of missing competencies by the application deadline."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

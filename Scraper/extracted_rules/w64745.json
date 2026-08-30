@@ -1,0 +1,51 @@
+{
+  "university_name": "Hochschule für angewandte Wissenschaften Ansbach",
+  "university_location": "Ansbach",
+  "university_federal_state": "Bavaria",
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": "www.hs-ansbach.de",
+  "program": {
+    "name": "Smart Energy Systems",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": null,
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": null,
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUANTITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": false,
+        "equivalence_statement_raw": null,
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "No admission criteria were found in the provided university constitution document (Grundordnung). This document focuses on the general organizational structure and internal procedures of the university, not on specific program admission requirements."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

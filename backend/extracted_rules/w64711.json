@@ -1,0 +1,74 @@
+{
+  "university_name": "Technische Hochschule Ingolstadt",
+  "university_location": "Ingolstadt",
+  "university_federal_state": null,
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Engineering and Management",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": "B2",
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": 90,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": false,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": 210,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "der Nachweis eines erfolgreichen Abschlusses eines Studiums an einer deutschen Hochschule mit mindestens 210 ECTS -Leistungspunkten oder äquivalentem Studienumfang im Bereich Wirtschaftsingenieurwesen, Maschinenbau, Fahrzeugtechnik, Luftfahrttechnik, Elektrotechnik, Informatik oder artverwandten Bereichen oder ein gleichwertiger erfolgreicher in- oder ausländischer Abschluss",
+        "core_reference_pillars": [
+          "Wirtschaftsingenieurwesen",
+          "Maschinenbau",
+          "Fahrzeugtechnik",
+          "Luftfahrttechnik",
+          "Elektrotechnik",
+          "Informatik"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": 30,
+        "notes": "Applicants with a degree of less than 210 ECTS but at least 180 ECTS may be admitted with the approval of the examination board, provided that the missing competencies (up to 30 ECTS) are demonstrated. These missing competencies can be proven through professional practical experience outside of studies or additional practical or theoretical study and examination achievements from a university, corresponding to a bachelor's degree level in the reference fields."
+      }
+    },
+    "deadlines": [],
+    "required_documents": [
+      {
+        "document_name": "Degree Certificate or Confirmation of impending degree",
+        "is_mandatory": true,
+        "notes": "Proof of successful completion of a university degree with at least 210 ECTS or an equivalent scope of study. If the degree is not yet completed by the application deadline, a confirmation from the university is required, credibly confirming the fulfillment of the requirement by the end of the enrollment period."
+      },
+      {
+        "document_name": "English Language Proficiency Certificate",
+        "is_mandatory": true,
+        "notes": "Proof of sufficient English language skills (level B2 of the Common European Framework of Reference)."
+      },
+      {
+        "document_name": "Proof of Missing Competencies",
+        "is_mandatory": false,
+        "notes": "Required only for conditional admission (if the qualifying degree has between 180 and 209 ECTS) to demonstrate compensation for up to 30 missing ECTS, by the end of the application period."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

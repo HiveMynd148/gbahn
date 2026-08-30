@@ -1,0 +1,58 @@
+programme_id,university_name,programme_title,po_url,status
+w15232,Heilbronn University,Software Engineering,https://www.hs-heilbronn.de/en/software-engineering-master,found_direct
+w23207,Technische Hochschule K�ln,Automation and IT,http://www.th-koeln.de/studium/automation--it-master--ordnungen-und-formulare_3959.php,found_direct
+w47553,University of Ulm,Cognitive Systems,https://campusonline.uni-ulm.de/qislsf/pub/studienplan/SP-MA-CogSys-FSPO2024.pdf,found_direct
+w6156,University of Osnabr�ck,Cognitive Science,https://www.uni-osnabrueck.de/studieren/unsere-studienangebote/abschluesse-und-ordnungen,found_direct
+w61589,Technische Universit�t Dresden,Computational Modelling and Simulation,https://tu-dresden.de/ing/informatik/studium/studienangebot/master-studiengaenge/computational-modeling-and-simulation,found_direct
+w63840,Eberhard Karls University T�bingen,Machine Learning,,not_found
+w63894,University of D�sseldorf,Artificial Intelligence and Data Science,https://www.hhu.de/fileadmin/redaktion/ZUV/Justitiariat/Amtliche_Bekanntmachungen/2021/2021_11_26_AB_53.pdf,found_direct
+w63909,Saarland University,Data Science and Artificial Intelligence,,not_found
+w63932,University of Osnabr�ck,Cognitive Computing,https://www.uni-osnabrueck.de/studieren/unsere-studienangebote/abschluesse-und-ordnungen,found_direct
+w64006,SRH University of Applied Sciences Heidelberg,Computer Science - Big Data and Artificial Intelligence,https://www.srh-university.de/en/master/computer-science-big-data-artificial-intelligence/i/,found_direct
+w64082,University of Bayreuth,Scientific Computing,https://www.amtliche-bekanntmachungen.uni-bayreuth.de/de/pruefungsordnungen/master/index.html,found_direct
+w64087,TU Dortmund University,Econometrics,https://www.tu-dortmund.de/studierende/im-studium/pruefungsangelegenheiten/pruefungsordnungen/,found_direct
+w64135,IU International University,Artificial Intelligence,https://www.iu.org/en-in/master/artificial-intelligence/,found_direct
+w64325,Technical University of Darmstadt,Logistics and supply chain management,https://www.intern.tu-darmstadt.de/verwaltung/dez_ii/hochschulrecht/gesetze_und_ordnungen/index.en.jsp,found_direct
+w64654,University of Erlangen-Nuremberg,Artificial Intelligence,,not_found
+w64695,University of W�rzburg,Artificial Intelligence & Extended Reality,https://www.informatik.uni-wuerzburg.de/en/studium/studiengaenge/master-artificial-intelligence-extended-reality/,found_direct
+w64711,Technische Hochschule Ingolstadt,Engineering and Management,https://www.thi.de/hochschule/ueber-uns/hochschulorganisation/stabsstelle-recht/satzungen-fakultaet-wirtschaftsingenieurwesen/masterstudiengaenge-wi/spo-master-engineering-and-management/,found_direct
+w64745,Ansbach University of Applied Sciences,Smart Energy Systems,https://www.hs-ansbach.de/hochschule/amtliche-bekanntmachungen-und-veroeffentlichungen/thematische-uebersicht-der-satzungen-nicht-amtlich#c29163,found_direct
+w64772,Gisma University of Applied Sciences,"Data Science, AI and Digital Business",https://www.gisma.com/programmes/postgraduate/msc-data-science-ai-and-digital-business,found_direct
+w64792,University of Passau,Artificial Intelligence Engineering,https://www.uni-passau.de/fileadmin/dokumente/beschaeftigte/Rechtsvorschriften/StO_und_PO/FMI/FStuPO_Master_AIE.pdf,found_direct
+w64814,Technische Hochschule Deggendorf,Artificial Intelligence for Smart Sensors and Actuators,https://www.th-deg.de/de/hochschule/hochschulrecht#accordion-spo-nuw,found_direct
+w64998,Saarland University,Cybersecurity,https://www.uni-saarland.de/en/study/programmes/master/cybersecurity.html,found_direct
+w65096,Technical University of Applied Sciences W�rzburg-Schweinfurt,Artificial Intelligence,https://mai.thws.de/studierende/studien-und-pruefungsordnung/,found_direct
+w65719,Brandenburgische Technische Universit�t Cottbus-Senftenberg,Artificial Intelligence,https://www.b-tu.de/artificial-intelligence-ms/detailinformationen/ordnungen-englische-uebersetzung-nicht-rechtsverbindlich,found_direct
+w66233,Technische Hochschule Ingolstadt,Artificial Intelligence,https://www.thi.de/hochschule/ueber-uns/hochschulorganisation/stabsstelle-recht/satzungen-fakultaet-informatik/masterstudiengaenge-i/master-kuenstliche-intelligenz/,found_direct
+w67120,Hof University of Applied Sciences,Artificial Intelligence and Robotics,http://www.hof-university.de/ueber-die-hochschule/aktuelles/amtsblatt.html,found_direct
+w67189,ESMT European School of Management and Technology,Master's in Analytics and Artificial Intelligence,https://esmt.berlin/master-programs/master-analytics-artificial-intelligence,found_fallback
+w67521,Technische Hochschule Ingolstadt,AI Engineering of Autonomous Systems,https://www.thi.de/hochschule/ueber-uns/hochschulorganisation/stabsstelle-recht/satzungen-fakultaet-elektro-und-informationstechnik/masterstudiengaenge-e/spo-master-ai-engineering-of-autonomous-systems/,found_direct
+w67708,Technische Hochschule Deggendorf,Applied Artificial Intelligence for Digital Production Management,https://www.th-deg.de/de/hochschule/hochschulrecht#accordion-spo-nuw,found_direct
+w68298,Constructor University,Computer Science and Software Engineering,https://en.m.wikipedia.org/wiki/Computer,found_fallback
+w69294,Technical University of Darmstadt,Artificial Intelligence and Machine Learning,https://www.informatik.tu-darmstadt.de/media/informatik/fb20_studium/formulare_und_dokumente/ordnungen/ordnungen_aiml/pruefungsordnung_aim_2023/Checklist_Eligibility_AIM_TUDarmstadt.pdf,found_direct
+w70184,Munich University of Technology,AI in Society,https://openai.com/,found_fallback
+w70197,University of Technology Nuremberg,Artificial Intelligence & Robotics,,not_found
+w70240,University of Europe for Applied Sciences,IoT Devices & Smart Services,https://www.geeksforgeeks.org/computer-networks/introduction-to-internet-of-things-iot-set-1/,found_fallback
+w70242,University of Europe for Applied Sciences,Generative Design & AI,https://en.m.wikipedia.org/wiki/Generative_AI,found_fallback
+w70254,Technische Hochschule Deggendorf,Robotics,https://th-deg.de/de/hochschule/hochschulrecht#accordion-spo-nuw,found_direct
+w7041,TU Dortmund University,Data Science,https://www.tu-dortmund.de/studierende/im-studium/pruefungsangelegenheiten/pruefungsordnungen/,found_direct
+w70803,Bielefeld University of Applied Sciences and Arts (HSBI),Data Science (Research Master),https://www.hsbi.de/pruefungsangelegenheiten,found_direct
+w71054,Technische Hochschule Deggendorf,Automotive Software Engineering,https://www.th-deg.de/de/hochschule/hochschulrecht#accordion-spo-ai,found_direct
+w71290,University of Hildesheim,Software Engineering (International Master's degree),http://www.uni-hildesheim.de/qm/processmanagement/regulations.php?showPage=study,found_direct
+w71729,Munich University of Technology,Data & Society,https://www.gov.sot.tum.de/en/gov/studies/data-society/,found_direct
+w72392,Weihenstephan-Triesdorf University of Applied Sciences,Digital Farming,https://www.hswt.de/en/study/study-offer/master/digital-farming,found_direct
+w72710,Brandenburgische Technische Universit�t Cottbus-Senftenberg,Mathematical Data Science,https://www.b-tu.de/math-data-science-ms/detailinformationen/ordnungen-modulhandbuch,found_direct
+w72792,Heidelberg University,Mathematics of Machine Learning and Data Science,https://backend.uni-heidelberg.de/de/dokumente/studien-und-pruefungsordnung-masterstudiengang-mathematics-of-machine-learning-and-data/download,found_direct
+w73002,University of Augsburg,Mathematics and Computer Science,https://www.uni-augsburg.de/en/studium/studienangebot/uebersicht/mathematics-and-computer-science-msc/,found_direct
+w73116,Karlsruhe Institute of Technology (KIT),Computer Science,https://www.sle.kit.edu/vorstudium/master-computer-science_14978.php,found_direct
+w73251,Albstadt-Sigmaringen University - University of Engineering and Economics,Industrial Artificial Intelligence,https://www.hs-albsig.de/studienangebot/masterstudiengaenge/industrial-artificial-intelligence/,found_direct
+w73355,University of Hamburg,Data Science and Artificial Intelligence,https://www.uni-hamburg.de/campuscenter/studienorganisation/ordnungen-satzungen/pruefungs-studienordnungen/mathematik-informatik-und-naturwissenschaften.html,found_direct
+w74171,Ruhr University Bochum,Computer Science,https://en.m.wikipedia.org/wiki/Computer,found_fallback
+w74175,Georg Simon Ohm University of Applied Sciences Nuremberg,Intelligent & Autonomous Systems,https://www.th-nuernberg.de/fileadmin/zentrale-einrichtungen/szs/sb/sb_docs/SPOs/Elektrotechnik_Feinwerktechnik_Informationstechnik/Master/spoM-IAS_aktuell.pdf,found_direct
+w76133,Munich University of Technology,AI in Biomedicine,https://openai.com/,found_fallback
+w76327,Heilbronn University,Applied Artificial Intelligence,https://cdn.hs-heilbronn.de/d37fc783715db6e1/d21adcf5e890/MAAI_Admission-Regulations.pdf,found_direct
+w76659,University of Bonn,Artificial Intelligence,https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/artificial-intelligence-msc,found_direct
+w76735,SRH University of Applied Sciences Heidelberg,Artificial Intelligence (AI) in Business,https://www.srh-university.de/en/master/artificial-intelligence-ai-in-business/b/,found_direct
+w76947,SRH University of Applied Sciences Heidelberg,Information Technology - Artificial Intelligence,https://www.srh-university.de/en/master/bls/information-technology-artificial-intelligence/,found_direct
+w76982,Karlsruhe Institute of Technology (KIT),Computational and Data Science,https://www.sle.kit.edu/vorstudium/amtlicheBekanntmachungen_15514.php,found_direct
+w77134,University of Applied Sciences Neu-Ulm,Digital Leadership in Information Management,https://www.hnu.de/studium/beratungsangebote/referate-studium-pruefung/studien-und-pruefungsordnungen,found_direct

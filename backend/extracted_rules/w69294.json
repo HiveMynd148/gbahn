@@ -1,0 +1,71 @@
+{
+  "university_name": "Technical University of Darmstadt",
+  "university_location": "Darmstadt",
+  "university_federal_state": "Hessen",
+  "university_institution_type": "Technical University",
+  "university_website_url": null,
+  "program": {
+    "name": "Artificial Intelligence and Machine Learning",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": null,
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": false,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": 60,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "It is necessary that a sufficient breadth of fundamental computer science courses, matching the contents of the compulsory and core courses from the B. Sc. Computer Science at TU Darmstadt, were covered during the previously absolved study programs. ... It is not necessary that all courses or all specified content be covered, provided there is sufficient overlap.",
+        "core_reference_pillars": [
+          "Functional and Object-oriented Programming Concepts",
+          "Algorithms and Data Structures",
+          "Digital Design",
+          "Computer Organisation",
+          "Parallel programming",
+          "Operating Systems",
+          "Introduction to Compiler Construction",
+          "Automata, Formal Languages and Decidability",
+          "Propositional Logic and Predicate Logic",
+          "Formal Methods in Software Design",
+          "Computer Networks and Distributed Systems",
+          "Computer Security",
+          "Information Management",
+          "Software Engineering",
+          "Modeling, Specification and Semantics",
+          "Visual Computing",
+          "Introduction to Artificial Intelligence",
+          "Probabilistic methods in computer science",
+          "Scientific Computing"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "Due to the research orientation of the M.Sc. Artificial Intelligence and Machine Learning, it is essential for a successful study that students have a high degree of self-organization and very good reflection skills."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

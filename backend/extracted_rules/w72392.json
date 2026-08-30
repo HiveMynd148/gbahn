@@ -1,0 +1,85 @@
+{
+  "university_name": "Hochschule Weihenstephan-Triesdorf",
+  "university_location": "Weihenstephan-Triesdorf",
+  "university_federal_state": "Bavaria",
+  "university_institution_type": "University of Applied Sciences",
+  "university_website_url": null,
+  "program": {
+    "name": "Digital Farming",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": "English",
+    "min_english_level": "B2",
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": 120,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "HYBRID",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": 180,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "Alternativ berechtigt ein Abschluss eines gleichwertigen Studiums an einer deutschen Hochschule bzw. Universität oder ein gleichwertiger Abschluss an einer ausländischen Hochschule bzw. Universität zum Zugang. Über die Gleichwertigkeit des Abschlusses entscheidet die Prüfungskommission unter Berücksichtigung von Art. 86 Abs. 1 BayHIG.",
+        "core_reference_pillars": [
+          "Agriculture",
+          "Horticulture",
+          "Agricultural Engineering",
+          "Agribusiness",
+          "Agricultural Sciences",
+          "Horticultural Sciences",
+          "Applied Computer Science",
+          "Computer Science",
+          "Electrical Engineering",
+          "Mechatronics"
+        ]
+      },
+      "contingencies": {
+        "allows_conditional_admission": true,
+        "max_conditional_ects": null,
+        "notes": "The Bachelor's degree (180 ECTS) or an equivalent qualification must be acquired by the end of the first semester of study. An official certificate stating the expected completion date of the degree must be submitted with the application."
+      }
+    },
+    "deadlines": [
+      {
+        "applicant_origin": "ALL",
+        "semester": "WINTER",
+        "portal_opens": null,
+        "application_deadline": null
+      }
+    ],
+    "required_documents": [
+      {
+        "document_name": "University degree certificate/transcript (min 180 ECTS)",
+        "is_mandatory": true,
+        "notes": "In agricultural science programs (agriculture, horticulture, agricultural engineering, agribusiness, agricultural or horticultural sciences) or in technical/IT programs (applied computer science, computer science, electrical engineering, mechatronics)."
+      },
+      {
+        "document_name": "English language certificate (B2 CEFR)",
+        "is_mandatory": true,
+        "notes": "Not required for applicants with an English-speaking Bachelor's degree, an equivalent English-speaking first academic degree, a relevant university entrance qualification from an English-speaking educational institution, native English speakers, or those who attended an English-speaking school for six years."
+      },
+      {
+        "document_name": "Certificate of expected degree completion",
+        "is_mandatory": true,
+        "notes": "Mandatory for conditional admission, confirming that the qualifying degree (min 180 ECTS) is expected to be completed by the end of the first semester."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

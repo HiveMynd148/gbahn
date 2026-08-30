@@ -1,0 +1,57 @@
+{
+  "university_name": "IU Internationale Hochschule GmbH",
+  "university_location": "Erfurt",
+  "university_federal_state": "Thuringia",
+  "university_institution_type": "University",
+  "university_website_url": null,
+  "program": {
+    "name": "Artificial Intelligence",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": null,
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": "None",
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": false,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": false,
+        "equivalence_statement_raw": null,
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "If application documents are in a language other than English or German, a translation is required. The university offers a partnership service for document translation."
+      }
+    },
+    "deadlines": [],
+    "required_documents": [
+      {
+        "document_name": "Application Documents",
+        "is_mandatory": true,
+        "notes": "Translations are required if original documents are not in English or German."
+      }
+    ]
+  },
+  "data_source": "GEMINI_EXTRACTED",
+  "_data_source": "GEMINI_EXTRACTED"
+}

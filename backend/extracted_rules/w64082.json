@@ -1,0 +1,51 @@
+{
+  "university_name": "University of Bayreuth",
+  "university_location": "Bayreuth",
+  "university_federal_state": "Bavaria",
+  "university_institution_type": "University",
+  "university_website_url": null,
+  "program": {
+    "name": "Scientific Computing",
+    "degree_type": "M.Sc.",
+    "nc_status": "NC_FREE",
+    "application_route": "DIRECT",
+    "application_fee_eur": null,
+    "primary_teaching_language": null,
+    "min_english_level": null,
+    "min_ielts_score": null,
+    "min_german_level": null,
+    "total_ects_required": null,
+    "min_gpa_german_scale": null,
+    "gre_required": "Not Required",
+    "is_free_tuition": true,
+    "tuition_fee_per_semester": null,
+    "requirements": {
+      "assessment_type": "QUALITATIVE",
+      "quantitative": {
+        "min_gpa_german_scale": null,
+        "total_ects_required": null,
+        "gre_required": false,
+        "ects_thresholds": {
+          "math": null,
+          "cs": null,
+          "theoretical_cs": null,
+          "practical_cs": null
+        }
+      },
+      "qualitative": {
+        "has_vague_equivalence_clause": true,
+        "equivalence_statement_raw": "The provided document is about the discontinuation of the Master's program African Development Studies in Geography. It does not contain any admission criteria or information about the Scientific Computing program.",
+        "core_reference_pillars": []
+      },
+      "contingencies": {
+        "allows_conditional_admission": false,
+        "max_conditional_ects": null,
+        "notes": "The provided document is solely about the repeal of the examination regulations for the Master's program 'African Development Studies in Geography' and its discontinuation. No information regarding the 'Scientific Computing' program's admission criteria could be found in this text."
+      }
+    },
+    "deadlines": [],
+    "required_documents": []
+  },
+  "data_source": "FALLBACK_GENERATED",
+  "_data_source": "GEMINI_EXTRACTED"
+}
