@@ -66,13 +66,17 @@ You need Docker and Docker Compose, nothing else.
 git clone https://github.com/HiveMynd148/gradbahn.git
 cd gradbahn
 cp .env.example .env
-```
-
-Set a real `SECRET_KEY` and `POSTGRES_PASSWORD` in `.env` before running this anywhere other than your own machine - the defaults are not safe to leave in place.
-
-```bash
 docker compose up --build
 ```
+
+Set a real `SECRET_KEY` and `POSTGRES_PASSWORD` in `.env` before running this anywhere other than your own machine — the defaults are not safe to leave in place.
+
+On first boot the backend automatically:
+1. Waits for Postgres to be ready
+2. Runs all database migrations (`alembic upgrade head`)
+3. Seeds the programme catalogue from the bundled `extracted_rules/` data
+
+This takes about 5–10 seconds. Subsequent restarts skip seeding since the database is already populated.
 
 - Frontend: `http://localhost`
 - API: `http://localhost:8000`
