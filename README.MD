@@ -63,8 +63,8 @@ gradbahn/
 You need Docker and Docker Compose, nothing else.
 
 ```bash
-git clone https://github.com/HiveMynd148/gradbahn.git
-cd gradbahn
+git clone https://github.com/HiveMynd148/gbahn.git
+cd gbahn
 cp .env.example .env
 docker compose up --build
 ```
